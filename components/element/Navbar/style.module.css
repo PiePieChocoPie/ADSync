@@ -1,0 +1,14 @@
+.container {
+  @apply w-navbar;
+  height: 100vh;
+}
+.list > li {
+  @apply mb-2;
+}
+.empty_stretch {
+  border-radius: var(--item-rounded);
+  flex-grow: 1;
+  background-color: var(--item-bg);
+}
+.logoutContainer {
+}
