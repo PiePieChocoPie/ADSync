@@ -1,0 +1,14 @@
+.item {
+  list-style-type: none;
+  background-color: var(--item-bg);
+  border-radius: var(--item-rounded);
+
+  @apply py-4 px-4 text-lg transition duration-500;
+}
+.item:hover {
+  background-color: var(--item-bg-hover);
+  @apply transition duration-500;
+}
+.item > span {
+  @apply ms-3;
+}

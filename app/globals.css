@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  
+  --item-bg: theme(colors.gray.100);
+  --item-bg-hover: theme(colors.blue.100);
+  --item-rounded: theme(borderRadius.lg);
+}
+
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --background: theme(colors.black);
+    --foreground: #ededed;
+    --item-bg: #1b1b1b;
+    --item-bg-hover: theme(colors.gray.900);
+
+  }
+} */
+
+body {
+  box-sizing: content-box;
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
