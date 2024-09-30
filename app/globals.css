@@ -7,7 +7,9 @@
   --foreground: #171717;
   
   --item-bg: theme(colors.gray.100);
+  --item-border: theme(colors.gray.200);
   --item-bg-hover: theme(colors.blue.100);
+  --item-border-hover: theme(colors.blue.200);
   --item-rounded: theme(borderRadius.lg);
 }
 
