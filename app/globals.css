@@ -11,6 +11,9 @@
   --item-bg-hover: theme(colors.blue.100);
   --item-border-hover: theme(colors.blue.200);
   --item-rounded: theme(borderRadius.lg);
+
+  --navbar-min-width: theme(width.navbarMin);
+  --navbar-max-width: theme(width.navbarMax);
 }
 
 /* @media (prefers-color-scheme: dark) {

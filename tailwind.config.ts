@@ -13,7 +13,8 @@ const config: Config = {
         foreground: "var(--foreground)",
       },
       spacing: {
-        navbar: "16rem",
+        navbarMin: "3.5rem",
+        navbarMax: "16rem",
       },
     },
   },

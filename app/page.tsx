@@ -1,7 +1,8 @@
-
+import Input from "@/components/atom/Input/page";
 export default function Home() {
   return (
     <>
+      <Input placeholder="fe" />
       <h1>fjskelfj;wkfeaw</h1>
       <h1>fjskelfj;wkfeaw</h1>
       <h1>fjskelfj;wkfeaw</h1>

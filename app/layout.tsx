@@ -35,10 +35,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased flex`}
       >
         <Navbar />
-        <div className="ms-navbar ps-5">
+        <div className="ps-5">
           {children}
         </div>
       </body>

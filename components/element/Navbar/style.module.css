@@ -1,9 +1,18 @@
 .container {
-  @apply w-navbar;
   height: 100vh;
+}
+.navbarWidth {
+  @apply w-navbarMin;
 }
 .list > li {
   @apply mb-2;
+}
+.logo {
+  object-fit: cover;
+  height: var(--navbar-max-width);
+}
+.logo, .empty_stretch {
+  border-bottom-right-radius: var(--item-rounded);
 }
 .empty_stretch {
   border-radius: var(--item-rounded);
@@ -11,4 +20,12 @@
   background-color: var(--item-bg);
 }
 .logoutContainer {
+}
+
+
+
+/* empty styles for queryselector */
+.navbar, .emptyNavbar {
+  opacity: 1;
+  @apply transition-all duration-300 ease-out;
 }
