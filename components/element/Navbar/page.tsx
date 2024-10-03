@@ -38,17 +38,29 @@ function Navbar () {
 
     if (navbar && emptyNavbar) {
       const listItems = navbar.querySelectorAll('li');
+      let itemDisplayValue = 'inline';
       let itemOpacityValue = '1';
       
       let newFolded = false
       if (newValue) {
+        itemDisplayValue = 'none';
         itemOpacityValue = '0';
         newFolded = true
       }
-
+      
       listItems.forEach((item) => {
         const itemTextNode = item.querySelector('span');
         if (itemTextNode) {
+          // hide text progressively by setting timer
+          if (newFolded){
+            setTimeout(() => {
+              itemTextNode.style.display = itemDisplayValue;
+            }, 300);
+          }
+          // show text
+          else {
+            itemTextNode.style.display = itemDisplayValue;
+          }
           itemTextNode.style.opacity = itemOpacityValue;
         }
       });

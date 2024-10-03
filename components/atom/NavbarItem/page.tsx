@@ -6,7 +6,7 @@ export default function NavbarItem({name, icon, position}: {name: string, icon: 
   return(
     <li className={styles.item}>
       <FontAwesomeIcon icon={icon} />
-      <span className={`${position=='absolute'? 'absolute': ''}`}>{name}</span>
+      <span className={`${position=='absolute'? 'absolute opacity-0': ''}`}>{name}</span>
     </li>
   )
 }
