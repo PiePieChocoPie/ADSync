@@ -5,7 +5,7 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  
+
   --item-bg: theme(colors.gray.100);
   --item-bg-hover: theme(colors.blue.100);
   --item-rounded: theme(borderRadius.lg);
