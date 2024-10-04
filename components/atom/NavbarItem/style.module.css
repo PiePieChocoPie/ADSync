@@ -11,5 +11,5 @@
 }
 .item > span {
   white-space: nowrap;
-  @apply ms-3 transition-opacity duration-150 ease-out;
+  @apply ms-3 transition-opacity duration-300 ease-out;
 }

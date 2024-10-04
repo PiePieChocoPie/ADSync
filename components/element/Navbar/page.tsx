@@ -22,12 +22,33 @@ function Navbar () {
     let min_size = rootStyle.getPropertyValue('--navbar-min-width');
     let max_size = rootStyle.getPropertyValue('--navbar-max-width');
     let size = min_size;
+
+    let itemDisplayValue = 'none';
+    let itemOpacityValue = '0';
     if (!folded) {
+      itemDisplayValue = 'inline';
+      itemOpacityValue = '1';
       size = max_size;
     }
     if (navbar && emptyNavbar) {
       navbar.style['width'] = size;
       emptyNavbar.style['width'] = size;
+
+      const listItems = navbar.querySelectorAll('li');
+
+      
+
+
+
+      listItems.forEach((item) => {
+        const itemTextNode = item.querySelector('span');
+        if (itemTextNode) {
+          itemTextNode.style.display = itemDisplayValue;
+          setTimeout(() => {
+            itemTextNode.style.opacity = itemOpacityValue;
+          }, 50);
+        }
+      });
     }
   };
 
@@ -37,33 +58,33 @@ function Navbar () {
     const emptyNavbar = document.querySelector(`.${styles.emptyNavbar}`);
 
     if (navbar && emptyNavbar) {
-      const listItems = navbar.querySelectorAll('li');
-      let itemDisplayValue = 'inline';
-      let itemOpacityValue = '1';
+      // const listItems = navbar.querySelectorAll('li');
+      // let itemDisplayValue = 'inline';
+      // let itemOpacityValue = '1';
       
       let newFolded = false
       if (newValue) {
-        itemDisplayValue = 'none';
-        itemOpacityValue = '0';
+        // itemDisplayValue = 'none';
+        // itemOpacityValue = '0';
         newFolded = true
       }
       
-      listItems.forEach((item) => {
-        const itemTextNode = item.querySelector('span');
-        if (itemTextNode) {
-          // hide text progressively by setting timer
-          if (newFolded){
-            setTimeout(() => {
-              itemTextNode.style.display = itemDisplayValue;
-            }, 300);
-          }
-          // show text
-          else {
-            itemTextNode.style.display = itemDisplayValue;
-          }
-          itemTextNode.style.opacity = itemOpacityValue;
-        }
-      });
+      // listItems.forEach((item) => {
+      //   const itemTextNode = item.querySelector('span');
+      //   if (itemTextNode) {
+      //     // hide text progressively by setting timer
+      //     if (newFolded){
+      //       setTimeout(() => {
+      //         itemTextNode.style.display = itemDisplayValue;
+      //       }, 300);
+      //     }
+      //     // show text
+      //     else {
+      //       itemTextNode.style.display = itemDisplayValue;
+      //     }
+      //     itemTextNode.style.opacity = itemOpacityValue;
+      //   }
+      // });
       setFolded(newFolded)
     }
   };
