@@ -13,6 +13,7 @@ const config: Config = {
         foreground: "var(--foreground)",
       },
       spacing: {
+        xxs: "180px",
         navbarMin: "3.5rem",
         navbarMax: "16rem",
       },

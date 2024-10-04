@@ -1,8 +1,12 @@
 .container {
   height: 100vh;
 }
+.container > *:not(ul), .container > ul > * {
+  @apply drop-shadow-sm;
+}
+
 .navbarWidth {
-  @apply w-navbarMin;
+  @apply w-navbarMin max-w-full sm:max-w-xs md:max-w-navbarMax;
 }
 .list > li {
   @apply mb-2;
@@ -19,8 +23,7 @@
   flex-grow: 1;
   background-color: var(--item-bg);
 }
-.logoutContainer {
-}
+
 
 
 
