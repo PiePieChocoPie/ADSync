@@ -6,6 +6,7 @@ export default function Home() {
     <h1>AUTH</h1>
       <Input placeholder="fe" />
       <Link href={"/dashboard"} >To dashboard</Link>
+      
     </>
   );
 }
