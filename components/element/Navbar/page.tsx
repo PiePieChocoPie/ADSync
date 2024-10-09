@@ -9,11 +9,7 @@ import { faHouse, faSignOut } from '@fortawesome/free-solid-svg-icons'
 import NavbarItem from "@/components/atom/NavbarItem/page";
 
 function Navbar () {
-  // const router = useRouter();
-  // const isAuthPage = router.pathname;
-
   let [folded, setFolded] = useState(true);
-
 
   // dynamicly change navbar width
   const handleFoldedChange = () => {
@@ -49,50 +45,68 @@ function Navbar () {
     }
   };
 
-
   // start changing navbar width and pretify it folds/unfolds
-  const changeFolded = (newValue: boolean) => {
+  const changeFolded = () => {
     const navbar = document.querySelector(`.${styles.navbar}`);
     const emptyNavbar = document.querySelector(`.${styles.emptyNavbar}`);
     if (navbar && emptyNavbar) {
-      let newFolded = false
-      if (newValue) {
-        newFolded = true
-      }
-      setFolded(newFolded)
+      setFolded(!folded)
     }
   };
-
 
   // track folded changing
   useEffect(() => {
     handleFoldedChange();
   }, [folded]);
+  
 
-  // if (isAuthPage) return <></>;
   return(
-    <>
-    <div className={`${styles.emptyNavbar} ${styles.navbarWidth}`}></div>
-    <div onMouseEnter={(e) => changeFolded(false) }
-      onMouseLeave={(e) => changeFolded(true)} 
-      className={`${styles.container} ${styles.navbarWidth} ${styles.navbar} fixed left-0 top-0 flex flex-col`}
-    >
-      <div className="w-100 mb-3">
-        <Image className={styles.logo} src={logoImg} alt="logo" />
-      </div>
+    <div className="">
+      <div className={`${styles.emptyNavbar} ${styles.navbarWidth}`}></div>
+      <div 
+        className={`${styles.container} ${styles.navbarWidth} ${styles.navbar} fixed left-0 top-0 flex flex-col`}
+      >
+        <div className="w-100 mb-3">
+          <Image className={styles.logo} src={logoImg} alt="logo" />
+        </div>
+        
+        <button onClick={(e) => changeFolded()} className={styles.unfoldButton}>
+          	{folded? ">": "<"}
+        </button>
       
-      <ul className={styles.list}>
-        <NavbarItem name="Главная" icon={faHouse} position="absolute" />
-        <NavbarItem name="ГлавнаяОчень" icon={faHouse} position="absolute" />
-        <NavbarItem name="Сильно главная" icon={faHouse} position="absolute" />
-        <NavbarItem name="FAQ" icon={faHouse} position="absolute" />
-      </ul>
-      <div className={styles.empty_stretch + " "}></div>
-      <div className={styles.logoutContainer + " my-2"}>
-        <NavbarItem name="Logout" icon={faSignOut} position="absolute"/>
-      </div>
+        <ul className={styles.list}>
+          <NavbarItem name="Главная" icon={faHouse} position="absolute" />
+          <NavbarItem name="ГлавнаяОчень" icon={faHouse} position="absolute" />
+          <NavbarItem name="Сильно главная" icon={faHouse} position="absolute" />
+          <NavbarItem name="FAQ" icon={faHouse} position="absolute" />
+        </ul>
+        <div className={styles.empty_stretch + " "}></div>
+        <div className={styles.logoutContainer + " my-2"}>
+          <NavbarItem name="Logout" icon={faSignOut} position="absolute"/>
+        </div>
     </div>
-    </>
+    
+    </div>
   )
 };
 export default Navbar;
+
+
+
+
+
+  // const changeFolded = (newValue: boolean) => {
+  //   const navbar = document.querySelector(`.${styles.navbar}`);
+  //   const emptyNavbar = document.querySelector(`.${styles.emptyNavbar}`);
+  //   if (navbar && emptyNavbar) {
+  //     let newFolded = false
+  //     if (newValue) {
+  //       newFolded = true
+  //     }
+  //     setFolded(newFolded)
+  //   }
+  // };
+  /* <div onMouseEnter={(e) => changeFolded(false) }
+    onMouseLeave={(e) => changeFolded(true)}
+    className={`${styles.container} ${styles.navbarWidth} ${styles.navbar} fixed left-0 top-0 flex flex-col`}
+  > */

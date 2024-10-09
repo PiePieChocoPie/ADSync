@@ -5,6 +5,10 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  
+  --primary: theme(colors.blue.500);
+  --primary-hover: theme(colors.blue.600);
+  --regular: theme(colors.gray.800);
 
   --item-bg: theme(colors.gray.100);
   --item-border: theme(colors.gray.200);
@@ -14,6 +18,7 @@
 
   --navbar-min-width: theme(width.navbarMin);
   --navbar-max-width: theme(width.navbarMax);
+
 }
 
 /* @media (prefers-color-scheme: dark) {
