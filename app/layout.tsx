@@ -1,6 +1,7 @@
 // base imports
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+
 import "./globals.css";
 
 // fontawesome
@@ -9,7 +10,7 @@ import { config } from "@fortawesome/fontawesome-svg-core";
 config.autoAddCss = false;
 
 // components
-import Navbar from "@/components/element/Navbar/page";
+
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -35,12 +36,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased flex`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Navbar />
-        <div className="ps-5 w-full max-w-md lg:max-w-2xl xl:max-w-3xl mx-auto">
-          {children}
-        </div>
+        {children}
       </body>
     </html>
   );

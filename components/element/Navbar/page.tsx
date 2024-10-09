@@ -1,5 +1,6 @@
 'use client'
 import { useEffect, useState } from "react";
+// import { useRouter } from "next/router";
 import styles from "./style.module.css";
 import Image from "next/image";
 import logoImg from "@/public/imgs/logo.jpg";
@@ -8,8 +9,11 @@ import { faHouse, faSignOut } from '@fortawesome/free-solid-svg-icons'
 import NavbarItem from "@/components/atom/NavbarItem/page";
 
 function Navbar () {
+  // const router = useRouter();
+  // const isAuthPage = router.pathname;
 
   let [folded, setFolded] = useState(true);
+
 
   // dynamicly change navbar width
   const handleFoldedChange = () => {
@@ -22,7 +26,6 @@ function Navbar () {
     let min_size = rootStyle.getPropertyValue('--navbar-min-width');
     let max_size = rootStyle.getPropertyValue('--navbar-max-width');
     let size = min_size;
-
     // let itemDisplayValue = 'none';
     let itemOpacityValue = '0';
     if (!folded) {
@@ -33,13 +36,7 @@ function Navbar () {
     if (navbar && emptyNavbar) {
       navbar.style['width'] = size;
       emptyNavbar.style['width'] = size;
-
       const listItems = navbar.querySelectorAll('li');
-
-      
-
-
-
       listItems.forEach((item) => {
         const itemTextNode = item.querySelector('span');
         if (itemTextNode) {
@@ -52,11 +49,11 @@ function Navbar () {
     }
   };
 
+
   // start changing navbar width and pretify it folds/unfolds
   const changeFolded = (newValue: boolean) => {
     const navbar = document.querySelector(`.${styles.navbar}`);
     const emptyNavbar = document.querySelector(`.${styles.emptyNavbar}`);
-
     if (navbar && emptyNavbar) {
       let newFolded = false
       if (newValue) {
@@ -72,7 +69,7 @@ function Navbar () {
     handleFoldedChange();
   }, [folded]);
 
-
+  // if (isAuthPage) return <></>;
   return(
     <>
     <div className={`${styles.emptyNavbar} ${styles.navbarWidth}`}></div>
@@ -84,16 +81,16 @@ function Navbar () {
         <Image className={styles.logo} src={logoImg} alt="logo" />
       </div>
       
-        <ul className={styles.list}>
-          <NavbarItem name="Главная" icon={faHouse} position="absolute" />
-          <NavbarItem name="ГлавнаяОчень" icon={faHouse} position="absolute" />
-          <NavbarItem name="Сильно главная" icon={faHouse} position="absolute" />
-          <NavbarItem name="FAQ" icon={faHouse} position="absolute" />
-        </ul>
-        <div className={styles.empty_stretch + " "}></div>
-        <div className={styles.logoutContainer + " my-2"}>
-          <NavbarItem name="Logout" icon={faSignOut} position="absolute"/>
-        </div>
+      <ul className={styles.list}>
+        <NavbarItem name="Главная" icon={faHouse} position="absolute" />
+        <NavbarItem name="ГлавнаяОчень" icon={faHouse} position="absolute" />
+        <NavbarItem name="Сильно главная" icon={faHouse} position="absolute" />
+        <NavbarItem name="FAQ" icon={faHouse} position="absolute" />
+      </ul>
+      <div className={styles.empty_stretch + " "}></div>
+      <div className={styles.logoutContainer + " my-2"}>
+        <NavbarItem name="Logout" icon={faSignOut} position="absolute"/>
+      </div>
     </div>
     </>
   )
