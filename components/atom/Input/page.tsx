@@ -1,9 +1,9 @@
 import styles from "./style.module.css"
 
-export default function Input({placeholder}: {placeholder: string}) {
+export default function Input({placeholder, type = "text"} : {placeholder: string, type?: string}) {
     return(
         <>
-            <input type="text" className={styles.item} placeholder={placeholder} />
+            <input type={type} className={styles.item} placeholder={placeholder} />
         </>
     )
 }
