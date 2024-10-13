@@ -1,5 +1,6 @@
 .container {
   height: 100vh;
+  z-index: 10;
 }
 .container > *:not(ul), .container > ul > * {
   @apply drop-shadow-sm;
@@ -31,4 +32,41 @@
 .navbar, .emptyNavbar {
   opacity: 1;
   @apply transition-all duration-300 ease-out;
+}
+.emptyNavbar {
+  z-index: -50;
+}
+
+
+
+.unfoldButton {
+  position: absolute;
+  top: 50%;
+  right: 0%;
+  /* transform: translate(65%, -50%);
+  z-index: 20;
+  width: 24px;
+  height: 64px;
+  border-radius: 8px 100% 100% 8px; */
+  font-size: 1.5rem;
+  font-weight: 300;
+  transform: translate(70%, -50%);
+  z-index: 20;
+  width: 32px;
+  height: 48px;
+  border-radius: 8px 100% 100% 8px;
+
+  background-color: var(--regular);
+  color: white;
+  /* background: linear-gradient(to left, var(--primary-color) 30%, rgba(0, 0, 0, 0) 90%); */
+  
+  border: none;
+  overflow: hidden;
+  cursor: pointer;
+  @apply shadow-sm transition-colors duration-300;
+}
+
+.unfoldButton:hover {
+  background-color: var(--primary-hover);
+  @apply transition-colors duration-300;
 }
