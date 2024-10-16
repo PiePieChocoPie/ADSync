@@ -1,0 +1,24 @@
+.container {
+    width: 28rem;
+    padding: 1.2rem 2rem;
+    display: flex;
+    flex-direction: column;
+    border-radius: var(--item-rounded);
+    border: 0.15rem solid var(--item-border);
+    @apply shadow-2xl
+
+}
+
+.container > p {
+    margin-top: 1.4rem;
+}
+
+.container > h1 {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.container p:nth-of-type(1) {
+    margin-top: 0;
+}
