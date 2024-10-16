@@ -1,7 +1,7 @@
 .item {
     width: 100%;
     height: 2.4rem;
-    margin: 1.2rem 0;
+    margin: 0.4rem 0 1.4rem 0;
     background-color: var(--item-bg);
     border-radius: var(--item-rounded);
     border-width: 0.15rem;

@@ -1,22 +1,25 @@
+'use client'
 import styles from "./style.module.css";
 import Input from "@/components/atom/Input/page";
 import Hr from "@/components/atom/Hr/page";
-import MyButton from '@/components/atom/Button/page';
+import Button from '@/components/atom/Button/page';
 
 
 
 
 export default function Auth() {
+  const test = () => {
+    console.log(12)
+  }
     return (
         <div className={styles.container}>
             <h1>Вход</h1>
             <Hr width="80%"/>
-            <p>Логин</p>
-            <Input placeholder="Введите логин" />
-            <p>Пароль</p>
-            <Input type="password" placeholder="Введите пароль" />
+            
+            <Input title="Логин" placeholder="Введите логин" />
+            <Input title="Пароль" type="password" placeholder="Введите пароль" />
             <h6 style={{alignSelf: "flex-end", marginTop: "1.4rem"}}>
-                <MyButton type="submit">Отправить</MyButton>    
+                <Button type="submit" action={test}>Войти</Button>    
             </h6>
         </div>
     );
