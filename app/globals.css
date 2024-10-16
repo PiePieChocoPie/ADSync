@@ -5,6 +5,7 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --text-regular: #fff;
   
   --primary: theme(colors.blue.500);
   --primary-hover: theme(colors.blue.600);

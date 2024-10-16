@@ -57,7 +57,7 @@
   border-radius: 8px 100% 100% 8px;
 
   background-color: var(--regular);
-  color: white;
+  color: var(--text-regular);
   /* background: linear-gradient(to left, var(--primary-color) 30%, rgba(0, 0, 0, 0) 90%); */
   
   border: none;
