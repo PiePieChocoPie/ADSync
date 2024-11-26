@@ -1,0 +1,6 @@
+.hr {
+    align-self: center;
+    height: 1.2px;
+    background-color: var(--item-border);
+    margin: 1.4rem 0;
+}
