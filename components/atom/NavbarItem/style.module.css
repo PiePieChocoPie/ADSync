@@ -2,7 +2,8 @@
   list-style-type: none;
   background-color: var(--item-bg);
   border-radius: var(--item-rounded);
-
+  position: relative;
+  overflow: hidden;
   @apply py-4 px-4 text-lg transition duration-500;
 }
 .item:hover {
@@ -10,5 +11,7 @@
   @apply transition duration-500;
 }
 .item > span {
-  @apply ms-3;
+  white-space: nowrap;
+
+  @apply ms-3 transition-opacity duration-200 ease-out;
 }
