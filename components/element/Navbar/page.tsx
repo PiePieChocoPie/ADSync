@@ -82,7 +82,7 @@ function Navbar () {
           <NavbarItem name="Настройка сервисов" icon={faGears} href='dashboard/settings'/>
         </ul>
         <div className={styles.empty_stretch + " "}></div>
-        <div className={styles.logoutContainer + " my-2"}>
+        <div className={styles.logoutContainer + " mt-2"}>
           <NavbarItem name="Выход" icon={faSignOut} />
         </div>
     </div>

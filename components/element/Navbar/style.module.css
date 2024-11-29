@@ -32,6 +32,7 @@
 
 .logo, .empty_stretch {
   border-bottom-right-radius: var(--item-rounded);
+  border-top-right-radius: var(--item-rounded);
 }
 .empty_stretch {
   border-radius: var(--item-rounded);
