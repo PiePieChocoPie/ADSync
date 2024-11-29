@@ -26,7 +26,7 @@ export default function Auth() {
             <Input title="Логин" placeholder="Введите логин" />
             <Input title="Пароль" type="password" placeholder="Введите пароль" />
             <h6 style={{alignSelf: "flex-end", marginTop: "1.4rem"}}>
-                <Button type="submit" action={test}>Войти</Button>    
+                <Button title="Войти"type="submit" action={test} />
             </h6>
         </div>
     );

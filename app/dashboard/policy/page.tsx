@@ -1,5 +1,8 @@
+import PageHeader from "@/components/molecule/PageHeader/page";
+
 export default function Policy() {
   return (
-    <h1>Policy</h1>
+    <PageHeader title="Политика конфиденциальности" />
+
   )
 }

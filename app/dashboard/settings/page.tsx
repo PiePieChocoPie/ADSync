@@ -1,5 +1,11 @@
+import PageHeader from "@/components/molecule/PageHeader/page";
+import Input from "@/components/atom/Input/page";
+
 export default function Settings() {
   return (
-    <h1>settings</h1>
+    <div>
+      <PageHeader title="Настройки" />
+      <Input title="IP-адрес" placeholder="Введите IP-адрес" />
+    </div>
   )
 }

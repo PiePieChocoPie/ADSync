@@ -1,5 +1,7 @@
+import PageHeader from "@/components/molecule/PageHeader/page";
+
 export default function Queue() {
   return (
-    <h1>QUEUE</h1>
+    <PageHeader title="Очередь сотрудников" />
   )
 }
