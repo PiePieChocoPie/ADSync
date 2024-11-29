@@ -1,5 +1,5 @@
 import Input from "@/components/atom/Input/page";
-export default function Home() {
+export default function dashboard() {
   return (
     <>
       <Input placeholder="fe" />

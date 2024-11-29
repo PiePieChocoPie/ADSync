@@ -9,13 +9,27 @@
 .navbarWidth {
   @apply w-navbarMin max-w-full sm:max-w-xs md:max-w-navbarMax;
 }
-.list > li {
+.list li {
   @apply mb-2;
 }
 .logo {
   object-fit: cover;
   height: var(--navbar-max-width);
 }
+
+/* .logo {
+  transition: opacity 0.5s ease-in-out;
+}
+
+.imgContainer.folded .logo {
+  opacity: 1
+}
+
+.imgContainer:not(.folded) .logo {
+  opacity: 1;
+} */
+
+
 .logo, .empty_stretch {
   border-bottom-right-radius: var(--item-rounded);
 }
@@ -57,7 +71,7 @@
   border-radius: 8px 100% 100% 8px;
 
   background-color: var(--regular);
-  color: var(--text-regular);
+  color: var(--text-reversed);
   /* background: linear-gradient(to left, var(--primary-color) 30%, rgba(0, 0, 0, 0) 90%); */
   
   border: none;

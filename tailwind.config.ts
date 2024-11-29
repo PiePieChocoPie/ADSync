@@ -14,8 +14,8 @@ const config: Config = {
       },
       spacing: {
         xxs: "180px",
-        navbarMin: "3.5rem",
-        navbarMax: "16rem",
+        navbarMin: "56px",
+        navbarMax: "256px",
       },
     },
   },

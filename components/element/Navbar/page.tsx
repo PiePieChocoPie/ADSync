@@ -3,8 +3,9 @@ import { useEffect, useState } from "react";
 // import { useRouter } from "next/router";
 import styles from "./style.module.css";
 import Image from "next/image";
+import logoMiniImg from "@/public/imgs/logo_mini.jpg";
 import logoImg from "@/public/imgs/logo.jpg";
-import { faHouse, faSignOut } from '@fortawesome/free-solid-svg-icons'
+import { faSignOut, faUsers, faGears, faUserLock, faHome} from '@fortawesome/free-solid-svg-icons'
 
 import NavbarItem from "@/components/atom/NavbarItem/page";
 
@@ -66,8 +67,8 @@ function Navbar () {
       <div 
         className={`${styles.container} ${styles.navbarWidth} ${styles.navbar} fixed left-0 top-0 flex flex-col`}
       >
-        <div className="w-100 mb-3">
-          <Image className={styles.logo} src={logoImg} alt="logo" />
+        <div className={`w-100 mb-3 ${styles.imgContainer} ${folded ? styles.folded : ''}`}>
+          <Image className={styles.logo} src={folded? logoMiniImg: logoImg} alt="logo" />
         </div>
         
         <button onClick={(e) => changeFolded()} className={styles.unfoldButton}>
@@ -75,14 +76,14 @@ function Navbar () {
         </button>
       
         <ul className={styles.list}>
-          <NavbarItem name="Главная" icon={faHouse} position="absolute" />
-          <NavbarItem name="ГлавнаяОчень" icon={faHouse} position="absolute" />
-          <NavbarItem name="Сильно главная" icon={faHouse} position="absolute" />
-          <NavbarItem name="FAQ" icon={faHouse} position="absolute" />
+          <NavbarItem name="Главная" icon={faHome} href='dashboard'/>
+          <NavbarItem name="Очередь сотрудников" icon={faUsers} href='dashboard/queue'/>
+          <NavbarItem name="Политика доступов" icon={faUserLock} href='dashboard/policy'/>
+          <NavbarItem name="Настройка сервисов" icon={faGears} href='dashboard/settings'/>
         </ul>
         <div className={styles.empty_stretch + " "}></div>
         <div className={styles.logoutContainer + " my-2"}>
-          <NavbarItem name="Logout" icon={faSignOut} position="absolute"/>
+          <NavbarItem name="Выход" icon={faSignOut} />
         </div>
     </div>
     
@@ -90,23 +91,3 @@ function Navbar () {
   )
 };
 export default Navbar;
-
-
-
-
-
-  // const changeFolded = (newValue: boolean) => {
-  //   const navbar = document.querySelector(`.${styles.navbar}`);
-  //   const emptyNavbar = document.querySelector(`.${styles.emptyNavbar}`);
-  //   if (navbar && emptyNavbar) {
-  //     let newFolded = false
-  //     if (newValue) {
-  //       newFolded = true
-  //     }
-  //     setFolded(newFolded)
-  //   }
-  // };
-  /* <div onMouseEnter={(e) => changeFolded(false) }
-    onMouseLeave={(e) => changeFolded(true)}
-    className={`${styles.container} ${styles.navbarWidth} ${styles.navbar} fixed left-0 top-0 flex flex-col`}
-  > */

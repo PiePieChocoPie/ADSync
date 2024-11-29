@@ -4,8 +4,8 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
-  --text-regular: #fff;
+  --text-regular: #171717;
+  --text-reversed: #fff;
   
   --primary: theme(colors.blue.500);
   --primary-hover: theme(colors.blue.600);
@@ -34,7 +34,7 @@
 
 body {
   box-sizing: content-box;
-  color: var(--foreground);
+  color: var(--text-regular);
   background: var(--background);
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
 }
