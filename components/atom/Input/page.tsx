@@ -10,7 +10,7 @@ export default function Input({
     const id = useId();
     return(
         <>
-          <label className="mb-0" htmlFor={`${type}-${id}`}>{title}</label>
+          <label className="mb-0 w-min" htmlFor={`${type}-${id}`}>{title}</label>
           <input type={type} className={`${styles.item} ${addClasses(styles, classes)}`} placeholder={placeholder} id={`${type}-${id}`}/>
         </>
     )
