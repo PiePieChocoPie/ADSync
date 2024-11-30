@@ -65,7 +65,7 @@ function Navbar () {
     <div className="">
       <div className={`${styles.emptyNavbar} ${styles.navbarWidth}`}></div>
       <div 
-        className={`${styles.container} ${styles.navbarWidth} ${styles.navbar} fixed left-0 top-0 flex flex-col`}
+        className={`${styles.container} ${folded ? styles.folded : ''} ${styles.navbarWidth} ${styles.navbar} fixed left-0 top-0 flex flex-col`}
       >
         <div className={`w-100 mb-3 ${styles.imgContainer} ${folded ? styles.folded : ''}`}>
           <Image className={styles.logo} src={folded? logoMiniImg: logoImg} alt="logo" />

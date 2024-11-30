@@ -7,7 +7,8 @@
   @apply py-4 px-4 text-lg transition duration-500;
 }
 .item:hover {
-  background-color: var(--item-bg-hover);
+  background-color: var(--primary-light-3);
+  /* color: var(--text-hover); */
   @apply transition duration-500;
 }
 .item > span {

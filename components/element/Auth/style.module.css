@@ -3,9 +3,9 @@
     padding: 1.2rem 2rem;
     display: flex;
     flex-direction: column;
-    border-radius: var(--item-rounded);
-    border: 0.15rem solid var(--item-border);
-    @apply shadow-2xl
+    border-radius: var(--item-rounded-lg);
+    border: var(--item-border-width) solid var(--item-border);
+    @apply shadow-xl
 
 }
 

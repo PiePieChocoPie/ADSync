@@ -5,6 +5,9 @@
 .container > *:not(ul), .container > ul > * {
   @apply drop-shadow-sm;
 }
+.container:not(.folded) > *:not(ul), .container:not(.folded) > ul > * {
+  @apply drop-shadow-md;
+}
 
 .navbarWidth {
   @apply w-navbarMin max-w-full sm:max-w-xs md:max-w-navbarMax;
@@ -71,7 +74,7 @@
   height: 48px;
   border-radius: 8px 100% 100% 8px;
 
-  background-color: var(--regular);
+  background-color: var(--primary-dark-3);
   color: var(--text-reversed);
   /* background: linear-gradient(to left, var(--primary-color) 30%, rgba(0, 0, 0, 0) 90%); */
   
@@ -82,6 +85,6 @@
 }
 
 .unfoldButton:hover {
-  background-color: var(--primary-hover);
+  background-color: var(--primary);
   @apply transition-colors duration-300;
 }
