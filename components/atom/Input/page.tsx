@@ -1,3 +1,4 @@
+import addClasses from "@/scripts/style";
 import styles from "./style.module.css"
 import { useId } from "react"
 
@@ -10,7 +11,7 @@ export default function Input({
     return(
         <>
           <label className="mb-0" htmlFor={`${type}-${id}`}>{title}</label>
-          <input type={type} className={`${styles.item} ${classes}`} placeholder={placeholder} id={`${type}-${id}`}/>
+          <input type={type} className={`${styles.item} ${addClasses(styles, classes)}`} placeholder={placeholder} id={`${type}-${id}`}/>
         </>
     )
 }

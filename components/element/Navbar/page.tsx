@@ -1,6 +1,6 @@
 'use client'
 import { useEffect, useState } from "react";
-// import { useRouter } from "next/router";
+import { usePathname } from 'next/navigation';
 import styles from "./style.module.css";
 import Image from "next/image";
 import logoMiniImg from "@/public/imgs/logo_mini.jpg";
@@ -10,6 +10,10 @@ import { faSignOut, faUsers, faGears, faUserLock, faHome} from '@fortawesome/fre
 import NavbarItem from "@/components/atom/NavbarItem/page";
 
 function Navbar () {
+  const pathName = usePathname();
+  const pathNameArr = pathName.split('/');
+  const currentPage = pathNameArr[pathNameArr.length - 1];
+
   let [folded, setFolded] = useState(true);
 
   // dynamicly change navbar width
@@ -76,10 +80,10 @@ function Navbar () {
         </button>
       
         <ul className={styles.list}>
-          <NavbarItem name="Главная" icon={faHome} href='dashboard'/>
-          <NavbarItem name="Очередь сотрудников" icon={faUsers} href='dashboard/queue'/>
-          <NavbarItem name="Политика доступов" icon={faUserLock} href='dashboard/policy'/>
-          <NavbarItem name="Настройка сервисов" icon={faGears} href='dashboard/settings'/>
+          <NavbarItem name="Главная" icon={faHome} href='dashboard' classes={currentPage=='dashboard' ? 'active': ''} />
+          <NavbarItem name="Очередь сотрудников" icon={faUsers} href='dashboard/queue' classes={currentPage=='queue' ? 'active': ''} />
+          <NavbarItem name="Политика доступов" icon={faUserLock} href='dashboard/policy' classes={currentPage=='policy' ? 'active': ''} />
+          <NavbarItem name="Настройка сервисов" icon={faGears} href='dashboard/settings' classes={currentPage=='settings' ? 'active': ''} />
         </ul>
         <div className={styles.empty_stretch + " "}></div>
         <div className={styles.logoutContainer + " mt-2"}>

@@ -25,13 +25,15 @@
   --item-border: #ededed;
   --item-border-bottom: #d4d4d4;
   --item-border-hover: #005fb8;
+  --item-border-active: #005fb8;
   --item-border-width: theme(borderSpacing[0.5]);
   --item-rounded: theme(borderRadius.DEFAULT);
   --item-rounded-lg: theme(borderRadius.lg);
+  
+  --list-border-width-selected: theme(borderSpacing[1.5]);
 
   --navbar-min-width: theme(width.navbarMin);
   --navbar-max-width: theme(width.navbarMax);
-
 }
 
 /* @media (prefers-color-scheme: dark) {
