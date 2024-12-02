@@ -5,7 +5,7 @@ import styles from "./style.module.css";
 import Image from "next/image";
 import logoMiniImg from "@/public/imgs/logo_mini.jpg";
 import logoImg from "@/public/imgs/logo.jpg";
-import { faSignOut, faUsers, faGears, faUserLock, faHome} from '@fortawesome/free-solid-svg-icons'
+import { faSignOut, faUsers, faGears, faUserLock, faHome, faSpaghettiMonsterFlying} from '@fortawesome/free-solid-svg-icons'
 
 import NavbarItem from "@/components/atom/NavbarItem/page";
 
@@ -84,6 +84,7 @@ function Navbar () {
           <NavbarItem name="Очередь сотрудников" icon={faUsers} href='dashboard/queue' classes={currentPage=='queue' ? 'active': ''} />
           <NavbarItem name="Политика доступов" icon={faUserLock} href='dashboard/policy' classes={currentPage=='policy' ? 'active': ''} />
           <NavbarItem name="Настройка сервисов" icon={faGears} href='dashboard/settings' classes={currentPage=='settings' ? 'active': ''} />
+          <NavbarItem name="Страница для тестирования" icon={faSpaghettiMonsterFlying} href='dashboard/testing' classes={currentPage=='testing' ? 'active': ''} />
         </ul>
         <div className={styles.empty_stretch + " "}></div>
         <div className={styles.logoutContainer + " mt-2"}>
