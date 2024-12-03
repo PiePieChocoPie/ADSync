@@ -1,0 +1,71 @@
+/* components/Header/style.module.css */
+
+.header {
+  background-color: #b0b7c6; /* Цвет фона */
+  padding: 15px; /* Уменьшенные отступы сверху и снизу */
+  display: flex; /* Используем flexbox для выравнивания */
+  justify-content: space-between; /* Распределяем элементы по краям */
+  align-items: center; /* Центрируем элементы по вертикали */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Добавляем тень для глубины */
+  max-width: 1400px; /* Ограничиваем максимальную ширину хедера */
+  margin: 0 auto; /* Центрируем хедер на странице */
+  border-radius: 5px;
+}
+
+.logo {
+  color: #61dafb; /* Цвет логотипа */
+  font-size: 28px; /* Увеличенный размер шрифта логотипа */
+  font-weight: bold; /* Жирный шрифт для логотипа */
+  flex: 1; /* Логотип занимает место слева */
+}
+
+.nav {
+  display: flex; /* Используем flexbox для навигации */
+  flex: 2; /* Навигация занимает больше места по центру */
+  justify-content: center; /* Центрируем навигацию */
+}
+
+.navList {
+  list-style: none; /* Убираем маркеры списка */
+  display: flex; /* Используем flexbox для списка */
+  margin: 0; /* Убираем отступы */
+  padding: 0; /* Убираем внутренние отступы */
+}
+
+.navItem {
+  margin: 0 20px; /* Увеличенные отступы между элементами навигации */
+  position: relative; /* Для псевдоэлементов */
+}
+
+.navLink {
+  text-decoration: none; /* Убираем подчеркивание */
+  color: #ffffff; /* Цвет текста навигации */
+  font-size: 20px; /* Увеличенный размер шрифта навигации */
+  padding: 10px 15px; /* Отступы внутри кнопок */
+  border-radius: 5px; /* Скругление углов кнопок */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Плавный переход цвета */
+}
+
+.navLink:hover {
+  background-color: #61dafb; /* Цвет фона при наведении */
+  color: #282c34; /* Цвет текста при наведении */
+}
+
+.navItem::after {
+  content: ''; /* Создаем псевдоэлемент */
+  display: block; /* Отображаем как блок */
+  width: 0; /* Начальная ширина */
+  height: 2px; /* Высота линии */
+  background: #61dafb; /* Цвет линии */
+  transition: width 0.3s ease; /* Плавный переход ширины */
+  margin: auto; /* Центрируем линию */
+}
+
+.navItem:hover::after {
+  width: 100%; /* Ширина линии при наведении */
+}
+
+.loginButton {
+  flex: 1; /* Кнопка логина занимает место справа */
+  text-align: right; /* Выравнивание кнопки логина по правому краю */
+}

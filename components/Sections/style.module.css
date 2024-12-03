@@ -1,0 +1,46 @@
+/* MainSection.module.css */
+.mainSection {
+    /* background-color: #f9f9f9; */
+    padding: 2rem;
+    text-align: center;
+    border-radius: 8px;
+    /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); */
+  }
+  
+  .title {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #333;
+  }
+  
+  .description {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: #666;
+  }
+  
+  .ctaButton {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .ctaButton:hover {
+    background-color: #0056b3;
+  }
+
+/* MainSection.module.css */
+.mainSection {
+  max-width: 1500px; /* Установите желаемую максимальную ширину */
+  margin: 0 auto; /* Центрирование контейнера */
+  padding: 20px; /* Добавьте отступы для лучшего восприятия */
+}
+
+.section {
+  margin-bottom: 20px; /* Отступ между секциями */
+}
