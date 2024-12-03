@@ -1,15 +1,17 @@
 'use client'
 import { useEffect, useState } from "react";
-import { usePathname } from 'next/navigation';
-import styles from "./style.module.css";
+import { usePathname, useRouter } from 'next/navigation';
+import { setCookie } from 'cookies-next';
 import Image from "next/image";
 import logoMiniImg from "@/public/imgs/logo_mini.jpg";
 import logoImg from "@/public/imgs/logo.jpg";
 import { faSignOut, faUsers, faGears, faUserLock, faHome, faSpaghettiMonsterFlying} from '@fortawesome/free-solid-svg-icons'
+import styles from "./style.module.css";
 
 import NavbarItem from "@/components/atom/NavbarItem/page";
 
 function Navbar () {
+  const router = useRouter();
   const pathName = usePathname();
   const pathNameArr = pathName.split('/');
   const currentPage = pathNameArr[pathNameArr.length - 1];
@@ -59,6 +61,10 @@ function Navbar () {
     }
   };
 
+  const logout = () => {
+    setCookie('authCredentials', null, {path: '/', secure: true});
+  }
+
   // track folded changing
   useEffect(() => {
     handleFoldedChange();
@@ -88,7 +94,7 @@ function Navbar () {
         </ul>
         <div className={styles.empty_stretch + " "}></div>
         <div className={styles.logoutContainer + " mt-2"}>
-          <NavbarItem name="Выход" icon={faSignOut} />
+          <NavbarItem name="Выход" icon={faSignOut} href="" action={logout} />
         </div>
     </div>
     
