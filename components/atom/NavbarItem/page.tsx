@@ -1,4 +1,4 @@
-import addClasses from "@/scripts/style";
+import addClasses from "@/utils/scripts/style";
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
 import styles from "./style.module.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

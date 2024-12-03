@@ -1,15 +1,18 @@
-import addClasses from "@/scripts/style";
+import addClasses from "@/utils/scripts/style";
 import styles from "./style.module.css";
 
+type ButtonProps = {
+  type?: "button" | "submit" | "reset";
+  classes?: string;
+  action?: () => void;
+  children: React.ReactNode;
+}
 
 export default function Button({
-  title="Ок", type = "button", classes="", action,
-}: {
-  title: string, type?: "button" | "submit" | "reset", classes?:string, action?: () => void
-}) {
+  type = "button", classes="", action, children }: ButtonProps) {
     return (
         <button onClick={action} type={type} className={`${styles.item} ${addClasses(styles, classes)}`}>
-            {title}
+            {children}
         </button>
     );
 }

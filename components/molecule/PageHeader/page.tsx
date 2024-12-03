@@ -1,7 +1,7 @@
 import styles from "./style.module.css";
 
-export default function Header({title}: {title: string}) {
+export default function Header({children}: {children: React.ReactNode}) {
   return(
-    <div className={styles.container}>{title}</div>
+    <div className={styles.container}>{children}</div>
   )
 }
