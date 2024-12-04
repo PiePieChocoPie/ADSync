@@ -1,0 +1,40 @@
+/* LoginSection.module.css */
+.container {
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
+    max-width: 1400px;
+    margin: 1.25rem auto;
+}
+
+.title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.625rem;
+}
+
+.formGroup {
+    margin-bottom: 0.9375rem;
+}
+
+.input {
+    width: 100%;
+    padding: 0.625rem;
+    border: 0.0625rem solid #dddddd;
+    border-radius: 0.25rem;
+}
+
+.button {
+    padding: 0.625rem 0.9375rem;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}

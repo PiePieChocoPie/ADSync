@@ -6,7 +6,7 @@ import Footer from '@/components/element/Footer/page';
 import AboutSection from '@/components/Sections/AboutSection/page';
 import ServicesSection from '@/components/Sections/ServicesSection/page';
 import ReviewsSection from '@/components/Sections/ReviewsSection/page';
-import LoginSection from '@/components/Sections/LoginSection/page';
+import LoginSection from '@/components/Sections/FeedbackSection/page';
 
 export default function MainLayout({ children }: { children: React.ReactNode }) {
   const aboutRef = useRef<HTMLDivElement>(null);
