@@ -3,8 +3,8 @@
     height: 2.4rem;
     margin: 0.4rem 0 1.4rem 0;
     background-color: var(--item-bg);
+    border-width: var(--item-border-width);
     border-radius: var(--item-rounded);
-    border-width: 0.15rem;
     border-color: var(--item-border);
     padding-left: 0.5rem;
     outline: none;
@@ -13,8 +13,9 @@
 }
 
 .item:hover {
-    background-color: var(--item-bg-hover);
-    border-color: var(--item-border-hover);
+  background-color: var(--item-bg-hover);
+  border-bottom-color: var(--item-border-hover);
+    /* border-color: var(--item-border-hover); */
 }
 
 .item:focus {
@@ -28,4 +29,12 @@
 
 .item:focus::placeholder {
     color: transparent;
+}
+
+.item:-webkit-autofill,
+.item:-webkit-autofill:hover,
+.item:-webkit-autofill:focus,
+.item:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px var(--primary-light-3) inset !important;
+    border-color: var(--primary-light-3);
 }

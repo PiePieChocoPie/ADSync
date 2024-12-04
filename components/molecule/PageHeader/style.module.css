@@ -1,0 +1,4 @@
+.container {
+  font-size: 2rem;
+  @apply mx-auto text-center py-2;
+}

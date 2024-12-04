@@ -1,17 +1,41 @@
 .item {
   list-style-type: none;
   background-color: var(--item-bg);
-  border-radius: var(--item-rounded);
+  border-top-right-radius: var(--item-rounded);
+  border-bottom-right-radius: var(--item-rounded);
   position: relative;
   overflow: hidden;
-  @apply py-4 px-4 text-lg transition duration-500;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  @apply py-4 text-lg transition-all duration-500;
 }
 .item:hover {
-  background-color: var(--item-bg-hover);
+  background-color: var(--primary-light-3);
   @apply transition duration-500;
 }
 .item > span {
   white-space: nowrap;
-
   @apply ms-3 transition-opacity duration-200 ease-out;
 }
+
+
+.active  {
+  background-clip: padding-box;
+  border-left-color: var(--item-border-active);
+  border-left-width: var(--list-border-width-selected);
+  padding-left: Calc(1rem - var(--list-border-width-selected));
+}
+.active:hover {
+  border-left-color: var(--primary-dark-2);
+}
+
+/* 
+  (1 rem)
+  padding-left: 1rem;
+  padding-right: 1rem;
+  in .item
+  AND (1rem)
+  padding-left: Calc(1rem - var(--list-border-width-selected));
+  in .active
+  MUSH BE THE SAME 
+*/

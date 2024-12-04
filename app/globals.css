@@ -3,23 +3,37 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-  --text-regular: #fff;
+  --background: #fff;
+  --element-background: #f9f9f9;
+  --text-regular: #060e19;
+  --text-reversed: #fff;
   
-  --primary: theme(colors.blue.500);
-  --primary-hover: theme(colors.blue.600);
+  --primary-light-3: #add8ff;
+  --primary-light-2: #80b9ee;
+  --primary-light-1: #559ce4;
+  --primary: #3379d9;
+  --primary-dark-1: #235a9f;
+  --primary-dark-2: #174276;
+  --primary-dark-3: #092642;
   --regular: theme(colors.gray.800);
-
-  --item-bg: theme(colors.gray.100);
-  --item-border: theme(colors.gray.200);
-  --item-bg-hover: theme(colors.blue.100);
-  --item-border-hover: theme(colors.blue.200);
-  --item-rounded: theme(borderRadius.lg);
+  
+  --primary-hover: #005fb8;
+  --text-hover: #fff;
+  
+  --item-bg: #fff;
+  --item-bg-hover: #f9f9f9;
+  --item-border: #ededed;
+  --item-border-bottom: #d4d4d4;
+  --item-border-hover: #005fb8;
+  --item-border-active: #005fb8;
+  --item-border-width: theme(borderSpacing[0.5]);
+  --item-rounded: theme(borderRadius.DEFAULT);
+  --item-rounded-lg: theme(borderRadius.lg);
+  
+  --list-border-width-selected: theme(borderSpacing[1.5]);
 
   --navbar-min-width: theme(width.navbarMin);
   --navbar-max-width: theme(width.navbarMax);
-
 }
 
 /* @media (prefers-color-scheme: dark) {
@@ -34,7 +48,7 @@
 
 body {
   box-sizing: content-box;
-  color: var(--foreground);
+  color: var(--text-regular);
   background: var(--background);
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
 }

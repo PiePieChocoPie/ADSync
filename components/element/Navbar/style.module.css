@@ -5,19 +5,37 @@
 .container > *:not(ul), .container > ul > * {
   @apply drop-shadow-sm;
 }
+.container:not(.folded) > *:not(ul), .container:not(.folded) > ul > * {
+  @apply drop-shadow-md;
+}
 
 .navbarWidth {
   @apply w-navbarMin max-w-full sm:max-w-xs md:max-w-navbarMax;
 }
-.list > li {
+.list li {
   @apply mb-2;
 }
 .logo {
   object-fit: cover;
   height: var(--navbar-max-width);
 }
+
+/* .logo {
+  transition: opacity 0.5s ease-in-out;
+}
+
+.imgContainer.folded .logo {
+  opacity: 1
+}
+
+.imgContainer:not(.folded) .logo {
+  opacity: 1;
+} */
+
+
 .logo, .empty_stretch {
   border-bottom-right-radius: var(--item-rounded);
+  border-top-right-radius: var(--item-rounded);
 }
 .empty_stretch {
   border-radius: var(--item-rounded);
@@ -56,8 +74,8 @@
   height: 48px;
   border-radius: 8px 100% 100% 8px;
 
-  background-color: var(--regular);
-  color: var(--text-regular);
+  background-color: var(--primary-dark-3);
+  color: var(--text-reversed);
   /* background: linear-gradient(to left, var(--primary-color) 30%, rgba(0, 0, 0, 0) 90%); */
   
   border: none;
@@ -67,6 +85,6 @@
 }
 
 .unfoldButton:hover {
-  background-color: var(--primary-hover);
+  background-color: var(--primary);
   @apply transition-colors duration-300;
 }
