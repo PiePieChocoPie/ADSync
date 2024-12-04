@@ -18,6 +18,13 @@
   --primary-dark-1: #235a9f;
   --primary-dark-2: #174276;
   --primary-dark-3: #092642;
+  --error-light-3: #ffadad;
+  --error-light-2: #ee8080;
+  --error-light-1: #e45555;
+  --error: #d93333;
+  --error-dark-1: #9f2323;
+  --error-dark-2: #761717;
+  --error-dark-3: #420909;
   --regular: theme(colors.gray.800);
   
   /* main hover */
@@ -31,6 +38,8 @@
   --item-border-bottom: #d4d4d4;
   --item-border-hover: #005fb8;
   --item-border-active: #005fb8;
+  --item-border-error: #b80000;
+  --item-border-error-hover: #d93333;
   --item-border-width: theme(borderSpacing[0.5]);
   --item-rounded: theme(borderRadius.DEFAULT);
   --item-rounded-lg: theme(borderRadius.lg);

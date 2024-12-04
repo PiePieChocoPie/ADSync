@@ -5,7 +5,8 @@
   z-index: 100;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.25);
+  background-color: rgba(0, 0, 0, 0);
+  @apply transition-colors duration-500 ease-in;
 }
 
 .spinner {
@@ -13,6 +14,8 @@
   z-index: 101;
   top:50%;
   left:50%;
+  opacity: 0;
+  @apply transition-opacity duration-1000;
 }
 
 .pointerEventNone {
