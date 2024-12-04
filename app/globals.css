@@ -3,11 +3,14 @@
 @tailwind utilities;
 
 :root {
+  /* text colors */
   --background: #fff;
   --element-background: #f9f9f9;
   --text-regular: #060e19;
   --text-reversed: #fff;
+  --text-error: #d93333;
   
+  /* main elements color palitre */
   --primary-light-3: #add8ff;
   --primary-light-2: #80b9ee;
   --primary-light-1: #559ce4;
@@ -17,9 +20,11 @@
   --primary-dark-3: #092642;
   --regular: theme(colors.gray.800);
   
+  /* main hover */
   --primary-hover: #005fb8;
   --text-hover: #fff;
   
+  /* button, inputs, list's items etc. */
   --item-bg: #fff;
   --item-bg-hover: #f9f9f9;
   --item-border: #ededed;
@@ -29,7 +34,10 @@
   --item-border-width: theme(borderSpacing[0.5]);
   --item-rounded: theme(borderRadius.DEFAULT);
   --item-rounded-lg: theme(borderRadius.lg);
-  
+
+  --spinner-color: var(--primary);
+
+  /* SIZES */
   --list-border-width-selected: theme(borderSpacing[1.5]);
 
   --navbar-min-width: theme(width.navbarMin);

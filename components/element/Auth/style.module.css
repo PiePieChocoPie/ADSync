@@ -22,3 +22,11 @@
 .container p:nth-of-type(1) {
     margin-top: 0;
 }
+
+
+
+.error {
+  color: var(--text-error);
+}
+.errorMsg {
+}
