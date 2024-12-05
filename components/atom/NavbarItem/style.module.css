@@ -10,7 +10,7 @@
   @apply py-4 text-lg transition-all duration-500;
 }
 .item:hover {
-  background-color: var(--primary-light-3);
+  background-color: var(--item-bg-colored-hover);
   @apply transition duration-500;
 }
 .item > span {
@@ -26,7 +26,7 @@
   padding-left: Calc(1rem - var(--list-border-width-selected));
 }
 .active:hover {
-  border-left-color: var(--primary-dark-2);
+  border-left-color: var(--item-border-active-hover);
 }
 
 /* 
