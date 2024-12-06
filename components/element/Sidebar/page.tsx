@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import { usePathname, useRouter } from 'next/navigation';
 import { setCookie } from 'cookies-next';
-import { useTheme } from 'next-themes';
+import { useTheme, } from 'next-themes';
 
 import styles from "./style.module.css";
 import { faSignOut, faUsers, faGears, faUserLock, faHome, faSpaghettiMonsterFlying, faSun, faMoon} from '@fortawesome/free-solid-svg-icons'
@@ -63,16 +63,17 @@ function Sidebar () {
       setFolded(!folded)
     }
   };
-
-  const logout = () => {
-    setCookie('authCredentials', null, {path: '/', secure: true});
-  }
-
+  
   // track folded changing
   useEffect(() => {
     handleFoldedChange();
   }, [folded]);
+  
 
+  const logout = () => {
+    setCookie('authCredentials', null, {path: '/', secure: true});
+  }
+  
   const changeTheme = () => {
     if (theme == 'dark') {
       setTheme('light');
@@ -80,8 +81,6 @@ function Sidebar () {
       setTheme('dark');
     }
   }
-  // setTheme('light');
-
 
   return(
     <div className="">
