@@ -49,7 +49,8 @@
 /* empty styles for queryselector */
 .sidebar, .emptySidebar {
   opacity: 1;
-  @apply transition-all duration-300 ease-out;
+  transition-property: width;
+  @apply duration-300 ease-out;
 }
 .emptySidebar {
   z-index: -50;

@@ -2,16 +2,19 @@
 import { useEffect, useState } from "react";
 import { usePathname, useRouter } from 'next/navigation';
 import { setCookie } from 'cookies-next';
+import { useTheme } from 'next-themes';
+
+import styles from "./style.module.css";
+import { faSignOut, faUsers, faGears, faUserLock, faHome, faSpaghettiMonsterFlying, faSun, faMoon} from '@fortawesome/free-solid-svg-icons'
 import Image from "next/image";
 import logoMiniImg from "@/public/imgs/logo_mini.jpg";
 import logoImg from "@/public/imgs/logo.jpg";
-import { faSignOut, faUsers, faGears, faUserLock, faHome, faSpaghettiMonsterFlying} from '@fortawesome/free-solid-svg-icons'
-import styles from "./style.module.css";
 
 import SidebarItem from "@/components/atom/SidebarItem/page";
 
 function Sidebar () {
   const router = useRouter();
+  const { theme, setTheme } = useTheme();
   const pathName = usePathname();
   const pathNameArr = pathName.split('/');
   const currentPage = pathNameArr[pathNameArr.length - 1];
@@ -69,7 +72,16 @@ function Sidebar () {
   useEffect(() => {
     handleFoldedChange();
   }, [folded]);
-  
+
+  const changeTheme = () => {
+    if (theme == 'dark') {
+      setTheme('light');
+    } else {
+      setTheme('dark');
+    }
+  }
+  // setTheme('light');
+
 
   return(
     <div className="">
@@ -94,6 +106,7 @@ function Sidebar () {
         </ul>
         <div className={styles.empty_stretch + " "}></div>
         <div className={styles.logoutContainer + " mt-2"}>
+          <SidebarItem name="Смена темы" icon={theme == 'light'? faSun: faMoon} action={changeTheme} />
           <SidebarItem name="Выход" icon={faSignOut} href="" action={logout} />
         </div>
     </div>
