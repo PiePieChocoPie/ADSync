@@ -5,7 +5,7 @@
     flex-direction: column;
     border-radius: var(--item-rounded-lg);
     border: var(--item-border-width) solid var(--item-border);
-    @apply shadow-xl
+    @apply shadow-xl;
 
 }
 
@@ -21,4 +21,26 @@
 
 .container p:nth-of-type(1) {
     margin-top: 0;
+}
+
+
+
+.error {
+  color: var(--text-error);
+  opacity: 0;
+  @apply transition-opacity duration-700;
+}
+
+.inputError {
+  border-color: var(--error-dark-1)!important;
+}
+.inputError:hover{
+  border-color: var(--error)!important;
+}
+.inputError:-webkit-autofill,
+.inputError:-webkit-autofill:hover,
+.inputError:-webkit-autofill:focus,
+.inputError:-webkit-autofill:active{
+  -webkit-box-shadow: 0 0 0 30px var(--error-light-3) inset !important;
+  border-color: var(--error-light-3)!important;
 }

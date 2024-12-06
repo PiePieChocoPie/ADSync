@@ -1,5 +1,6 @@
 // base imports
 import type { Metadata } from "next";
+import { ThemeProvider } from "next-themes";
 import localFont from "next/font/local";
 
 import "./globals.css";
@@ -44,11 +45,13 @@ export default async function RootLayout({
   
 
   return (
-    <html lang={savedLang}>
+    <html lang={savedLang} suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
           <LanguageProvider>
-          {children}
+            <ThemeProvider disableTransitionOnChange>
+              {children}
+            </ThemeProvider>
           </LanguageProvider>
       </body>
     </html>

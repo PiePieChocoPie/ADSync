@@ -35,6 +35,6 @@
 .item:-webkit-autofill:hover,
 .item:-webkit-autofill:focus,
 .item:-webkit-autofill:active{
-    -webkit-box-shadow: 0 0 0 30px var(--primary-light-3) inset !important;
-    border-color: var(--primary-light-3);
+    -webkit-box-shadow: 0 0 0 30px var(--item-autofill) inset;
+    border-color: var(--item-border-autofill);
 }

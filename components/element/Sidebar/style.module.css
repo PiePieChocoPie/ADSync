@@ -9,15 +9,15 @@
   @apply drop-shadow-md;
 }
 
-.navbarWidth {
-  @apply w-navbarMin max-w-full sm:max-w-xs md:max-w-navbarMax;
+.sidebarWidth {
+  @apply w-sidebarMin max-w-full sm:max-w-xs md:max-w-sidebarMax;
 }
 .list li {
   @apply mb-2;
 }
 .logo {
   object-fit: cover;
-  height: var(--navbar-max-width);
+  height: var(--sidebar-max-width);
 }
 
 /* .logo {
@@ -47,11 +47,12 @@
 
 
 /* empty styles for queryselector */
-.navbar, .emptyNavbar {
+.sidebar, .emptySidebar {
   opacity: 1;
-  @apply transition-all duration-300 ease-out;
+  transition-property: width;
+  @apply duration-300 ease-out;
 }
-.emptyNavbar {
+.emptySidebar {
   z-index: -50;
 }
 
@@ -74,8 +75,8 @@
   height: 48px;
   border-radius: 8px 100% 100% 8px;
 
-  background-color: var(--primary-dark-3);
-  color: var(--text-reversed);
+  background-color: var(--filled-button-bg);
+  color: var(--filled-button-text);
   /* background: linear-gradient(to left, var(--primary-color) 30%, rgba(0, 0, 0, 0) 90%); */
   
   border: none;
@@ -85,6 +86,6 @@
 }
 
 .unfoldButton:hover {
-  background-color: var(--primary);
+  background-color: var(--filled-button-bg-hover);
   @apply transition-colors duration-300;
 }

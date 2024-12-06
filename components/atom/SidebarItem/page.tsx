@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Link from "next/link";
 import { useTranslation } from 'react-i18next'; // Импортируем useTranslation
 
-type navbarItemProps = {
+type sidebarItemProps = {
   name: string,
   icon: IconProp,
   href?: string,
@@ -14,9 +14,9 @@ type navbarItemProps = {
   action?: () => void
 };
 
-export default function NavbarItem(
+export default function SidebarItem(
   {name, icon, href, position='absolute', classes='', action
-}: navbarItemProps) {
+}: sidebarItemProps) {
 
   return(
     <Link onClick={action} href={`${href != undefined? '/'+href: ''}`}>
