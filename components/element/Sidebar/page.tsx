@@ -8,9 +8,9 @@ import logoImg from "@/public/imgs/logo.jpg";
 import { faSignOut, faUsers, faGears, faUserLock, faHome, faSpaghettiMonsterFlying} from '@fortawesome/free-solid-svg-icons'
 import styles from "./style.module.css";
 
-import NavbarItem from "@/components/atom/NavbarItem/page";
+import SidebarItem from "@/components/atom/SidebarItem/page";
 
-function Navbar () {
+function Sidebar () {
   const router = useRouter();
   const pathName = usePathname();
   const pathNameArr = pathName.split('/');
@@ -18,16 +18,16 @@ function Navbar () {
 
   let [folded, setFolded] = useState(true);
 
-  // dynamicly change navbar width
+  // dynamicly change sidebar width
   const handleFoldedChange = () => {
-    const navbar = document.querySelector(`.${styles.navbar}`) as HTMLElement | null;
-    const emptyNavbar = document.querySelector(`.${styles.emptyNavbar}`) as HTMLElement | null;
+    const sidebar = document.querySelector(`.${styles.sidebar}`) as HTMLElement | null;
+    const emptySidebar = document.querySelector(`.${styles.emptySidebar}`) as HTMLElement | null;
 
     const root = document.querySelector(':root');
     if (!root) return;
     const rootStyle = window.getComputedStyle(root);
-    let min_size = rootStyle.getPropertyValue('--navbar-min-width');
-    let max_size = rootStyle.getPropertyValue('--navbar-max-width');
+    let min_size = rootStyle.getPropertyValue('--sidebar-min-width');
+    let max_size = rootStyle.getPropertyValue('--sidebar-max-width');
     let size = min_size;
     // let itemDisplayValue = 'none';
     let itemOpacityValue = '0';
@@ -36,10 +36,10 @@ function Navbar () {
       itemOpacityValue = '1';
       size = max_size;
     }
-    if (navbar && emptyNavbar) {
-      navbar.style['width'] = size;
-      emptyNavbar.style['width'] = size;
-      const listItems = navbar.querySelectorAll('li');
+    if (sidebar && emptySidebar) {
+      sidebar.style['width'] = size;
+      emptySidebar.style['width'] = size;
+      const listItems = sidebar.querySelectorAll('li');
       listItems.forEach((item) => {
         const itemTextNode = item.querySelector('span');
         if (itemTextNode) {
@@ -52,11 +52,11 @@ function Navbar () {
     }
   };
 
-  // start changing navbar width and pretify it folds/unfolds
+  // start changing sidebar width and pretify it folds/unfolds
   const changeFolded = () => {
-    const navbar = document.querySelector(`.${styles.navbar}`);
-    const emptyNavbar = document.querySelector(`.${styles.emptyNavbar}`);
-    if (navbar && emptyNavbar) {
+    const sidebar = document.querySelector(`.${styles.sidebar}`);
+    const emptySidebar = document.querySelector(`.${styles.emptySidebar}`);
+    if (sidebar && emptySidebar) {
       setFolded(!folded)
     }
   };
@@ -73,9 +73,9 @@ function Navbar () {
 
   return(
     <div className="">
-      <div className={`${styles.emptyNavbar} ${styles.navbarWidth}`}></div>
+      <div className={`${styles.emptySidebar} ${styles.sidebarWidth}`}></div>
       <div 
-        className={`${styles.container} ${folded ? styles.folded : ''} ${styles.navbarWidth} ${styles.navbar} fixed left-0 top-0 flex flex-col`}
+        className={`${styles.container} ${folded ? styles.folded : ''} ${styles.sidebarWidth} ${styles.sidebar} fixed left-0 top-0 flex flex-col`}
       >
         <div className={`w-100 mb-3 ${styles.imgContainer} ${folded ? styles.folded : ''}`}>
           <Image className={styles.logo} src={folded? logoMiniImg: logoImg} alt="logo" />
@@ -86,19 +86,19 @@ function Navbar () {
         </button>
       
         <ul className={styles.list}>
-          <NavbarItem name="Главная" icon={faHome} href='dashboard' classes={currentPage=='dashboard' ? 'active': ''} />
-          <NavbarItem name="Очередь сотрудников" icon={faUsers} href='dashboard/queue' classes={currentPage=='queue' ? 'active': ''} />
-          <NavbarItem name="Политика доступов" icon={faUserLock} href='dashboard/policy' classes={currentPage=='policy' ? 'active': ''} />
-          <NavbarItem name="Настройка сервисов" icon={faGears} href='dashboard/settings' classes={currentPage=='settings' ? 'active': ''} />
-          <NavbarItem name="Страница для тестирования" icon={faSpaghettiMonsterFlying} href='dashboard/testing' classes={currentPage=='testing' ? 'active': ''} />
+          <SidebarItem name="Главная" icon={faHome} href='dashboard' classes={currentPage=='dashboard' ? 'active': ''} />
+          <SidebarItem name="Очередь сотрудников" icon={faUsers} href='dashboard/queue' classes={currentPage=='queue' ? 'active': ''} />
+          <SidebarItem name="Политика доступов" icon={faUserLock} href='dashboard/policy' classes={currentPage=='policy' ? 'active': ''} />
+          <SidebarItem name="Настройка сервисов" icon={faGears} href='dashboard/settings' classes={currentPage=='settings' ? 'active': ''} />
+          <SidebarItem name="Страница для тестирования" icon={faSpaghettiMonsterFlying} href='dashboard/testing' classes={currentPage=='testing' ? 'active': ''} />
         </ul>
         <div className={styles.empty_stretch + " "}></div>
         <div className={styles.logoutContainer + " mt-2"}>
-          <NavbarItem name="Выход" icon={faSignOut} href="" action={logout} />
+          <SidebarItem name="Выход" icon={faSignOut} href="" action={logout} />
         </div>
     </div>
     
     </div>
   )
 };
-export default Navbar;
+export default Sidebar;

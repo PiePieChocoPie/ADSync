@@ -9,15 +9,15 @@
   @apply drop-shadow-md;
 }
 
-.navbarWidth {
-  @apply w-navbarMin max-w-full sm:max-w-xs md:max-w-navbarMax;
+.sidebarWidth {
+  @apply w-sidebarMin max-w-full sm:max-w-xs md:max-w-sidebarMax;
 }
 .list li {
   @apply mb-2;
 }
 .logo {
   object-fit: cover;
-  height: var(--navbar-max-width);
+  height: var(--sidebar-max-width);
 }
 
 /* .logo {
@@ -47,11 +47,11 @@
 
 
 /* empty styles for queryselector */
-.navbar, .emptyNavbar {
+.sidebar, .emptySidebar {
   opacity: 1;
   @apply transition-all duration-300 ease-out;
 }
-.emptyNavbar {
+.emptySidebar {
   z-index: -50;
 }
 

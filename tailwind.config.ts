@@ -14,11 +14,12 @@ const config: Config = {
       },
       spacing: {
         xxs: "180px",
-        navbarMin: "56px",
-        navbarMax: "256px",
+        sidebarMin: "56px",
+        sidebarMax: "256px",
       },
     },
   },
   plugins: [],
 };
+
 export default config;
