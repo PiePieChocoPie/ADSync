@@ -12,13 +12,13 @@ const ReviewsSection: React.FC = () => {
     <div className={styles.container}>
       <h2 className={styles.title}>{t('Reviews.title')}</h2>
       <div className={styles.reviewItem}>
-        "{t('Reviews.review1.content')}"
+        {t('Reviews.review1.content')}
       </div>
       <div className={styles.reviewItem}>
-        "{t('Reviews.review2.content')}"
+        {t('Reviews.review2.content')}
       </div>
       <div className={styles.reviewItem}>
-        "{t('Reviews.review3.content')}"
+        {t('Reviews.review3.content')}
       </div>
     </div>
   );

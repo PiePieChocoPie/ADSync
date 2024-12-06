@@ -30,15 +30,15 @@
         "title": "Reviews",
         "review1": {
             "name": "John Doe",
-            "content": "Great service! Highly recommended!"
+            "content": "\"Great service! Highly recommended!\""
         },
         "review2": {
             "name": "Jane Smith",
-            "content": "Excellent customer service. Will definitely use again!"
+            "content": "\"Excellent customer service. Will definitely use again!\""
         },
         "review3": {
             "name": "Bob Johnson",
-            "content": "The best experience I've had! Highly satisfied!"
+            "content": "\"The best experience I've had! Highly satisfied!\""
         }
     },
     "Contact": {
