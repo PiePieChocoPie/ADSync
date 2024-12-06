@@ -1,10 +1,14 @@
 import styles from './style.module.css';
+import { useTranslation } from 'react-i18next'; // Импортируем useTranslation
+
 
 export default function Footer() {
+  const { t } = useTranslation(); // Используем useTranslation для получения переводов
+
   return (
     <footer className={styles.footer}>
-      <p>© 2024 Your Company. Все права защищены.</p>
-      <p>Контакты: info@yourcompany.com</p>
+      <p>{t('Footer.copyright')}</p>
+      <p>{t('Footer.contacts')}</p>
     </footer>
   );
 }

@@ -7,6 +7,8 @@ import PageHeader from "@/components/molecule/PageHeader/page";
 import Input from "@/components/atom/Input/page";
 import Button from "@/components/atom/Button/page";
 
+import { useTranslation } from 'react-i18next'; // Импортируем useTranslation
+
 type AppConfigResponse = {
   ldapServer: string;
   ldapDomain: string;
@@ -38,25 +40,27 @@ export default function Settings() {
     getAppConfig();
   }, [])
 
+  const { t } = useTranslation(); // Используем useTranslation для получения переводов
+
   return (
     <div>
-      <PageHeader>Настройки</PageHeader>
+      <PageHeader>{t('Customizing.title')}</PageHeader>
       <div className={styles.gridContainer}>
         <div className={styles.gridItem}>
-          <Input defaultValue={`${data ? data?.ldapServer: ''}`} title="IP-адрес" placeholder="Введите IP-адрес" action={(e) => setLdapServer(e.target.value)}/>
+          <Input defaultValue={`${data ? data?.ldapServer: ''}`} title={t('Customizing.ip')} placeholder={t('Customizing.enterIP')} action={(e) => setLdapServer(e.target.value)}/>
         </div>
         <div className={styles.gridItem}>
-          <Input defaultValue="Сделай уже, а?!" title="Порт" placeholder="Введите Порт" />
+          <Input defaultValue="Сделай уже, а?!" title={t('Customizing.port')} placeholder={t('Customizing.enterPort')} />
         </div>
         <div className={styles.gridItem}>
-          <Input defaultValue={`${data ? data?.searchBase: ''}`} title="Полный DC для поиска" placeholder="DC=adsync, DC=com" action={(e) => setSearchBase(e.target.value)}/>
+          <Input defaultValue={`${data ? data?.searchBase: ''}`} title={t('Customizing.dc')} placeholder={t('Customizing.enterDC')} action={(e) => setSearchBase(e.target.value)}/>
         </div>
         <div className={styles.gridItem}>
-          <Input defaultValue={`${data ? data?.ldapDomain: ''}`} title="Домен LDAP" placeholder="adsync" action={(e) => setLdapDomain(e.target.value)}/>
+          <Input defaultValue={`${data ? data?.ldapDomain: ''}`} title={t('Customizing.ldap')} placeholder={t('Customizing.enterLDAP')} action={(e) => setLdapDomain(e.target.value)}/>
         </div>
       </div>
       <div className="w-min mx-auto">
-        <Button type="submit" action={saveAppConfig}>Сохранить</Button>
+        <Button type="submit" action={saveAppConfig}>{t('Customizing.save')}</Button>
       </div>
     </div>
   )

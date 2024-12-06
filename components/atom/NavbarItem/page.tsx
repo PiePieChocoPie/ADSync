@@ -3,6 +3,7 @@ import { IconProp } from "@fortawesome/fontawesome-svg-core";
 import styles from "./style.module.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Link from "next/link";
+import { useTranslation } from 'react-i18next'; // Импортируем useTranslation
 
 type navbarItemProps = {
   name: string,

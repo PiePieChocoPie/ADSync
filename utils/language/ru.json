@@ -1,0 +1,84 @@
+{
+    "Header": {
+        "logo": "AdSync",
+        "about": "О нас",
+        "services": "Услуги",
+        "reviews": "Отзывы",
+        "feedback": "Связь",
+        "login": "Логин"
+    },
+    "About": {
+        "title": "О нас",
+        "content": "Здесь вы можете добавить информацию о вашей компании или проекте."
+    },
+    "OurServices": {
+        "title": "Наши услуги",
+        "service1": {
+            "title": "Услуга 1",
+            "content": "Вы можете заказать услугу 1"
+        },
+            "service2": {
+            "title": "Услуга 2",
+            "content": "Вы можете заказать услугу 2"
+        },
+            "service3": {
+            "title": "Услуга 3",
+            "content": "Вы можете заказать услугу 3"
+        }
+    },
+    "Reviews": {
+        "title": "Отзывы клиентов",
+        "review1": {
+            "name": "Вася Пупкин",
+            "content": "Отличная компания! Очень рекомендую."
+        },
+        "review2": {
+            "name": "Петя Сидоров",
+            "content": "Супер сервис и поддержка!"
+        },
+        "review3": {
+            "name": "Максим Иванов",
+            "content": "Я очень доволен работой этой команды."
+        }
+    },
+    "Contact": {
+        "title": "Обратная связь",
+        "name": "Имя",
+        "phone": "Телефон",
+        "email": "Почта",
+        "send": "Отправить"
+    },
+    "Footer": {
+        "copyright": "Copyright © 2024 Your Company. Все права защищены.",
+        "contacts": "Контакты: info@yourcompany.com"
+    },
+
+    "Login":{ 
+        "login": "Вход",
+        "username": "Логин",
+        "password": "Пароль",
+        "usernamePlaceholder": "Введите ваш логин",
+        "passwordPlaceholder": "Введите ваш пароль",
+        "enterLogin": "Войти"
+    },
+
+    "Sidebar": {
+        "home": "Главная",
+        "employee": "Очередь сотрудников",
+        "access": "Политика доступа",
+        "customizing": "Настройка сервисов",
+        "signout": "Выход"
+    },
+    "Customizing": {
+        "title": "Настройки",
+        "ip": "IP-адрес",
+        "port": "Порт",
+        "dc": "Полное DC для поиска",
+        "ldap": "LDAP Домен",
+        "enterIP": "Введите IP-адрес",
+        "enterPort": "Введите порт",
+        "enterDC": "DC=adsync, DC=com",
+        "enterLDAP": "adsync",
+        "save": "Сохранить"
+    }
+}

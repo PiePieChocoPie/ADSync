@@ -9,6 +9,7 @@ import { faSignOut, faUsers, faGears, faUserLock, faHome, faSpaghettiMonsterFlyi
 import styles from "./style.module.css";
 
 import NavbarItem from "@/components/atom/NavbarItem/page";
+import { useTranslation } from 'react-i18next'; // Импортируем useTranslation
 
 function Navbar () {
   const router = useRouter();
@@ -63,13 +64,15 @@ function Navbar () {
 
   const logout = () => {
     setCookie('authCredentials', null, {path: '/', secure: true});
-  }
+  };
 
   // track folded changing
   useEffect(() => {
     handleFoldedChange();
   }, [folded]);
   
+  const { t } = useTranslation(); // Используем useTranslation для получения переводов
+
 
   return(
     <div className="">
@@ -86,15 +89,15 @@ function Navbar () {
         </button>
       
         <ul className={styles.list}>
-          <NavbarItem name="Главная" icon={faHome} href='dashboard' classes={currentPage=='dashboard' ? 'active': ''} />
-          <NavbarItem name="Очередь сотрудников" icon={faUsers} href='dashboard/queue' classes={currentPage=='queue' ? 'active': ''} />
-          <NavbarItem name="Политика доступов" icon={faUserLock} href='dashboard/policy' classes={currentPage=='policy' ? 'active': ''} />
-          <NavbarItem name="Настройка сервисов" icon={faGears} href='dashboard/settings' classes={currentPage=='settings' ? 'active': ''} />
+          <NavbarItem name={t('Sidebar.home')} icon={faHome} href='dashboard' classes={currentPage=='dashboard' ? 'active': ''} />
+          <NavbarItem name={t('Sidebar.employee')} icon={faUsers} href='dashboard/queue' classes={currentPage=='queue' ? 'active': ''} />
+          <NavbarItem name={t('Sidebar.access')} icon={faUserLock} href='dashboard/policy' classes={currentPage=='policy' ? 'active': ''} />
+          <NavbarItem name={t('Sidebar.customizing')} icon={faGears} href='dashboard/settings' classes={currentPage=='settings' ? 'active': ''} />
           <NavbarItem name="Страница для тестирования" icon={faSpaghettiMonsterFlying} href='dashboard/testing' classes={currentPage=='testing' ? 'active': ''} />
         </ul>
         <div className={styles.empty_stretch + " "}></div>
         <div className={styles.logoutContainer + " mt-2"}>
-          <NavbarItem name="Выход" icon={faSignOut} href="" action={logout} />
+          <NavbarItem name={t('Sidebar.signout')} icon={faSignOut} href="" action={logout} />
         </div>
     </div>
     

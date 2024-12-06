@@ -1,37 +1,48 @@
-'use client'
+'use client';
 
-import React, { useRef } from 'react';
+import React, { createContext, useState, useContext, useRef } from 'react';
 import Header from '@/components/element/Header/page';
 import Footer from '@/components/element/Footer/page';
 import AboutSection from '@/components/Sections/AboutSection/page';
 import ServicesSection from '@/components/Sections/ServicesSection/page';
 import ReviewsSection from '@/components/Sections/ReviewsSection/page';
-import LoginSection from '@/components/Sections/FeedbackSection/page';
+import FeedbackSection from '@/components/Sections/FeedbackSection/page';
+import { useLanguage } from '@/utils/language/buttonLanguage';
+import i18n from '@/utils/language/i18n';
+
+
+// Определяем допустимые ключи секций
+type SectionKeys = 'about' | 'services' | 'reviews' | 'feedback';
 
 export default function MainLayout({ children }: { children: React.ReactNode }) {
-  const aboutRef = useRef<HTMLDivElement>(null);
-  const servicesRef = useRef<HTMLDivElement>(null);
-  const reviewsRef = useRef<HTMLDivElement>(null);
-  const loginRef = useRef<HTMLDivElement>(null);
+  const sectionRefs: Record<SectionKeys, React.RefObject<HTMLDivElement>> = {
+    about: useRef<HTMLDivElement>(null),
+    services: useRef<HTMLDivElement>(null),
+    reviews: useRef<HTMLDivElement>(null),
+    feedback: useRef<HTMLDivElement>(null),
+  };
 
-  const scrollToSection = (section: string) => {
-    const sectionRef = {
-      about: aboutRef,
-      services: servicesRef,
-      reviews: reviewsRef,
-      login: loginRef,
-    }[section];
-
-    sectionRef?.current?.scrollIntoView({ behavior: 'smooth' });
+  const scrollToSection = (section: SectionKeys) => {
+    sectionRefs[section]?.current?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
     <div>
       <Header scrollToSection={scrollToSection} />
-      <div ref={aboutRef}><AboutSection /></div>
-      <div ref={servicesRef}><ServicesSection /></div>
-      <div ref={reviewsRef}><ReviewsSection /></div>
-      <div ref={loginRef}><LoginSection /></div>
+      <main>
+        <section ref={sectionRefs.about}>
+          <AboutSection />
+        </section>
+        <section ref={sectionRefs.services}>
+          <ServicesSection />
+        </section>
+        <section ref={sectionRefs.reviews}>
+          <ReviewsSection />
+        </section>
+        <section ref={sectionRefs.feedback}>
+          <FeedbackSection />
+        </section>
+      </main>
       <Footer />
     </div>
   );

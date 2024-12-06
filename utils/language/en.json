@@ -1,0 +1,84 @@
+{
+    "Header": {
+        "logo": "AdSync",
+        "about": "About",
+        "services": "Services",
+        "reviews": "Reviews",
+        "feedback": "Feedback",
+        "login": "Login"
+    },
+    "About": {
+        "title": "About Us",
+        "content": "Here you can add information about your company or project."
+    },
+    "OurServices": {
+        "title": "Our Services",
+        "service1": {
+            "title": "Service 1",
+            "content": "You can order service 1"
+        },
+            "service2": {
+            "title": "Service 2",
+            "content": "You can order service 2"
+        },
+            "service3": {
+            "title": "Service 3",
+            "content": "You can order service 3"
+        }
+    },
+    "Reviews": {
+        "title": "Reviews",
+        "review1": {
+            "name": "John Doe",
+            "content": "Great service! Highly recommended!"
+        },
+        "review2": {
+            "name": "Jane Smith",
+            "content": "Excellent customer service. Will definitely use again!"
+        },
+        "review3": {
+            "name": "Bob Johnson",
+            "content": "The best experience I've had! Highly satisfied!"
+        }
+    },
+    "Contact": {
+        "title": "Contact",
+        "name": "Name",
+        "phone": "Phone",
+        "email": "Email",
+        "send": "Send"
+    },
+    "Footer": {
+        "copyright": "Copyright © 2024 Your Company. All rights reserved.",
+        "contacts": "Contacts: info@yourcompany.com"
+    },
+
+    "Login":{ 
+        "login": "Login",
+        "username": "Username",
+        "password": "Password",
+        "usernamePlaceholder": "Enter your username",
+        "passwordPlaceholder": "Enter your password",
+        "enterLogin": "Login"
+    },
+
+    "Sidebar": {
+        "home": "Home",
+        "employee": "Employee queue",
+        "access": "Access Policy",
+        "customizing": "Customizing services",
+        "signout": "Sign out"
+    },
+    "Customizing": {
+        "title": "Settings",
+        "ip": "IP-address",
+        "port": "Port",
+        "dc": "Full DC to search for",
+        "ldap": "LDAP Domain",
+        "enterIP": "Enter the IP-address",
+        "enterPort": "Enter the port",
+        "enterDC": "DC=adsync, DC=com",
+        "enterLDAP": "adsync",
+        "save": "Save"
+    }
+}
