@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import { usePathname, useRouter } from 'next/navigation';
 import { setCookie } from 'cookies-next';
-import { useTheme, } from 'next-themes';
+import { useTheme } from 'next-themes';
 
 import styles from "./style.module.css";
 import { faSignOut, faUsers, faGears, faUserLock, faHome, faSpaghettiMonsterFlying, faSun, faMoon} from '@fortawesome/free-solid-svg-icons'
