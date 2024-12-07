@@ -1,40 +1,60 @@
 /* LoginSection.module.css */
 .container {
-    padding: 2rem;
-    background-color: #ffffff;
-    border-radius: 0.5rem;
-    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
-    max-width: 1100px;
-    margin: 1.25rem auto;
+    background: rgba(40, 44, 52, 0.8); /* Полупрозрачный фон */
+    backdrop-filter: blur(8px); /* Эффект размытия */
+    padding: 40px 20px; /* Отступы */
+    margin: 20px auto; /* Отступы между секциями */
+    border-radius: 10px; /* Скругленные углы */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Мягкая тень */
+    max-width: 1100px; /* Ограничение ширины */
 }
 
 .title {
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-bottom: 0.625rem;
+    font-size: 24px; /* Размер шрифта */
+    font-weight: bold; /* Жирный текст */
+    color: #ffffff; /* Цвет текста */
+    text-align: center; /* Центрирование */
+    margin-bottom: 20px; /* Отступ снизу */
 }
 
 .formGroup {
-    margin-bottom: 0.9375rem;
+    margin-bottom: 15px; /* Отступ между элементами формы */
 }
 
 .input {
-    width: 100%;
-    padding: 0.625rem;
-    border: 0.0625rem solid #dddddd;
-    border-radius: 0.25rem;
+width: 100%; /* Растягиваем на ширину родителя */
+padding: 10px 15px; /* Внутренние отступы */
+font-size: 16px; /* Размер текста */
+border: 1px solid rgba(255, 255, 255, 0.2); /* Полупрозрачная граница */
+border-radius: 6px; /* Скругленные углы */
+background: rgba(40, 44, 52, 0.5); /* Полупрозрачный фон */
+color: #ffffff; /* Цвет текста */
+transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Плавный переход */
+}
+
+    .input:focus {
+    border-color: #61dafb; /* Цвет при фокусе */
+    box-shadow: 0 0 8px rgba(97, 218, 251, 0.5); /* Подсветка */
+    outline: none; /* Убираем стандартный контур */
 }
 
 .button {
-    padding: 0.625rem 0.9375rem;
-    background-color: #007bff;
-    color: #ffffff;
-    border: none;
-    border-radius: 0.25rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.button:hover {
-    background-color: #0056b3;
-}
+    background: #61dafb; /* Основной цвет кнопки */
+    color: #282c34; /* Цвет текста */
+    font-size: 16px; /* Размер текста */
+    padding: 10px 20px; /* Внутренние отступы */
+    border: none; /* Убираем границу */
+    border-radius: 6px; /* Скругленные углы */
+    cursor: pointer; /* Указатель при наведении */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Плавный переход */
+    }
+    
+    .button:hover {
+    background: #52c7e9; /* Более темный цвет при наведении */
+    transform: translateY(-2px); /* Легкий подъем */
+    }
+    
+    .button:active {
+    background: #41a6d1; /* Более темный цвет при нажатии */
+    transform: translateY(0); /* Сброс подъема */
+    }

@@ -23,16 +23,16 @@ const LoginSection: React.FC = () => {
   return (
     <div className={styles.container}>
       <h2 className={styles.title}>{t('Contact.title')}</h2>
-      <div className={styles.formGroup}>
-        <Input type="text" value={name} onChange={e => setName(e.target.value)} placeholder={t('Contact.name')}/>
+      <div className={`${styles.formGroup}`}>
+        <Input type="text" value={name} onChange={e => setName(e.target.value)} placeholder={t('Contact.name')} classes={`${styles.input}`}/>
       </div>
-      <div className={styles.formGroup}>
-        <Input type="email" value={email} onChange={e => setEmail(e.target.value)} placeholder={t('Contact.email')}/>
+      <div className={`${styles.formGroup}`}>
+        <Input type="email" value={email} onChange={e => setEmail(e.target.value)} placeholder={t('Contact.email')} classes={`${styles.input}`}/>
       </div>
-      <div className={styles.formGroup}>
-        <Input type="tel" value={phone} onChange={e => setPhone(e.target.value)} placeholder={t('Contact.phone')}/>
+      <div className={`${styles.formGroup}`}>
+        <Input type="tel" value={phone} onChange={e => setPhone(e.target.value)} placeholder={t('Contact.phone')} classes={`${styles.input}`}/>
       </div>
-      <Button action={handleReset}>{t('Contact.send')}</Button>
+      <Button action={handleReset} classes={`${styles.button}`}>{t('Contact.send')}</Button>
     </div>
   );
 };

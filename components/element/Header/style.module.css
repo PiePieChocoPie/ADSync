@@ -1,79 +1,85 @@
 .header {
-  background-color: var(--primary-dark-3); /* Цвет фона */
-  padding: 15px; /* Отступы */
-  display: flex; /* Flexbox для выравнивания */
-  justify-content: space-between; /* Элементы по краям */
-  align-items: center; /* Центрирование по вертикали */
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Тень */
-  max-width: 1100px; /* Ограничение ширины */
-  margin: 0 auto; /* Центрирование */
-  border-radius: 5px; /* Скругленные углы */
+  background: rgba(40, 44, 52, 0.8); /* Полупрозрачный фон */
+  backdrop-filter: blur(10px); /* Эффект размытия */
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+  border-radius: 8px; /* Более плавные углы */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Мягкая тень */
 }
 
 .logo {
-  color: #61dafb; /* Цвет логотипа */
-  font-size: 28px; /* Размер шрифта */
-  font-weight: bold; /* Жирный шрифт */
-  flex-shrink: 0; /* Запрещаем сжимать логотип */
+  color: #61dafb; /* Сохранение фирменного цвета */
+  font-size: 28px;
+  font-weight: bold;
 }
 
 .nav {
-  display: flex; /* Flexbox для навигации */
-  justify-content: center; /* Центрирование элементов */
-  flex-grow: 1; /* Навигация растягивается, чтобы занять все пространство */
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
 }
 
 .navList {
-  list-style: none; /* Убираем маркеры списка */
-  display: flex; /* Flexbox для списка */
-  margin: 0; /* Убираем отступы */
-  padding: 0; /* Убираем внутренние отступы */
-  align-items: center; /* Центрируем по вертикали */
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  align-items: center;
 }
 
 .navItem {
-  margin: 0 20px; /* Отступы между элементами */
-  position: relative; /* Для псевдоэлементов */
-  min-width: 120px; /* Минимальная ширина для элемента */
-  display: flex;
-  justify-content: center;
+  margin: 0 16px;
+  position: relative;
 }
 
 .navButton {
-  background: none; /* Убираем фон */
-  border: none; /* Убираем границы */
-  color: #ffffff; /* Цвет текста */
-  font-size: 20px; /* Размер шрифта */
-  padding: 10px 20px; /* Внутренние отступы */
-  width: 120px; /* Фиксированная ширина для всех кнопок */
-  text-align: center; /* Центрируем текст */
-  border-radius: 5px; /* Скругление */
-  cursor: pointer; /* Указатель при наведении */
-  transition: background-color 0.3s ease, color 0.3s ease; /* Плавный переход */
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 18px;
+  padding: 8px 16px;
+  text-align: center;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .navButton:hover {
-  background-color: #61dafb; /* Цвет фона при наведении */
-  color: #282c34; /* Цвет текста при наведении */
-}
-
-.languageSwitcher {
-  margin-left: auto; /* Отодвигаем кнопку вправо */
-}
-
-.languageButton {
-  padding: 8px 15px;
-  font-size: 16px;
-  border: 1px solid #61dafb;
-  background-color: transparent;
+  background: rgba(97, 218, 251, 0.2); /* Полупрозрачный фон при наведении */
   color: #61dafb;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  min-width: 80px; /* Минимальная ширина кнопки */
 }
 
-.languageButton:hover {
-  background-color: #61dafb;
-  color: #282c34;
+.controls {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 8px; /* Отступ между кнопками */
+}
+
+.languageButton,
+.themeButton {
+  padding: 8px 12px;
+  font-size: 16px;
+  border: 1px solid rgba(97, 218, 251, 0.5);
+  background: transparent;
+  color: #61dafb;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 50px;
+}
+
+.languageButton:hover,
+.themeButton:hover {
+  background-color: rgba(97, 218, 251, 0.2);
+  color: #ffffff;
+  border-color: #61dafb;
+}
+
+.themeButton:active {
+  background: #41a6d1;
 }

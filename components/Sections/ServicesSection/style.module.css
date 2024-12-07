@@ -1,39 +1,79 @@
-/* ServicesSection.module.css */
+/* Основной контейнер */
 .container {
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    max-width: 1100px; /* Установите желаемую максимальную ширину */
-    margin: 20px auto; /* Добавляем отступ сверху и снизу */
-  }
+  background: rgba(40, 44, 52, 0.8); /* Полупрозрачный фон */
+  backdrop-filter: blur(8px); /* Эффект размытия */
+  padding: 40px 20px;
+  margin: 20px auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  max-width: 1100px;
+}
+
+/* Заголовок секции */
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Контент */
+.content {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* Кнопки */
+.buttonGroup {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.buttonGroup .button {
+  background: #61dafb;
+  color: #282c34;
+  font-size: 16px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.buttonGroup .button:hover {
+  background: #52c7e9;
+  transform: translateY(-2px);
+}
+
+.buttonGroup .button:active {
+  background: #41a6d1;
+  transform: translateY(0);
+}
+
+/* Анимация и текст */
+.textDisplay {
+  text-align: center;
+  font-size: 18px;
+  color: #282c34;
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px 0;
+
+  /* Начальные свойства */
   
-  .title {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 20px;
-  }
-  
-  .content {
-    width: 100%;
-    max-width: 1400px;
-  }
-  
-  .serviceItem {
-    margin: 10px 0;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-  }
-  .buttonGroup {
-    display: flex;
-    justify-content: space-around;
-    margin-bottom: 20px;
-  }
-  .textDisplay {
-    text-align: center;
-    font-size: 18px;
-    color: #333;
+  transform: translateY(10px);
+  transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out, visibility 0.4s ease-in-out;
+}
+
+  .textDisplay.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
   }
 
-  

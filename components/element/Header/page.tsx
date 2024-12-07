@@ -3,8 +3,12 @@
 import React, { useEffect, useState } from 'react';
 import { useLanguage } from '@/utils/language/buttonLanguage';
 import { useTranslation } from 'react-i18next'; // Импортируем useTranslation
+import { useTheme } from 'next-themes';
 import Button from '@/components/atom/Button/page';
 import styles from './style.module.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
+
 
 interface HeaderProps {
   scrollToSection: (section: 'about' | 'services' | 'reviews' | 'feedback') => void;
@@ -13,6 +17,8 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({ scrollToSection }) => {
   const { language, changeLanguage } = useLanguage();
   const { t } = useTranslation(); // Используем useTranslation для получения переводов
+  const { theme, setTheme } = useTheme(); // Используем хук next-themes для смены темы
+
 
   // const [mounted, setMounted] = useState(false); 
   // useEffect(() => {
@@ -26,6 +32,11 @@ const Header: React.FC<HeaderProps> = ({ scrollToSection }) => {
     const newLanguage = language === 'en' ? 'ru' : 'en';
     changeLanguage(newLanguage); // Переключаем язык через контекст
   };
+  const changeTheme = () => {
+    console.log("Current theme:", theme); // Лог для отладки
+    setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'));
+  };
+
 
   const navItems: { label: string; section: 'about' | 'services' | 'reviews' | 'feedback' }[] = [
     { label: t('Header.about'), section: 'about' },
@@ -48,10 +59,24 @@ const Header: React.FC<HeaderProps> = ({ scrollToSection }) => {
           ))}
         </ul>
       </nav>
-      <div className={`${styles.languageSwitcher}`}>
-        <Button action={toggleLanguage} classes={`${styles.languageButton}`}>
-          {language === 'en' ? 'EN' : 'RU'}
-        </Button>
+      <div className={`${styles.controls}`}>
+        {/* Кнопка смены языка */}
+        <div className={`${styles.languageSwitcher}`}>
+          <Button action={toggleLanguage} classes={`${styles.languageButton}`}>
+            {language === 'en' ? 'EN' : 'RU'}
+          </Button>
+        </div>
+
+        {/* Кнопка смены темы */}
+        <div className={`${styles.themeSwitcher}`}>
+          <Button action={changeTheme} classes={`${styles.themeButton}`}>
+            {theme === 'light' ? (
+              <FontAwesomeIcon icon={faSun} />
+            ) : (
+              <FontAwesomeIcon icon={faMoon} />
+            )}
+          </Button>
+        </div>
       </div>
     </header>
   );
