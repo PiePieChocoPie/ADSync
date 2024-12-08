@@ -10,8 +10,10 @@ import "@fortawesome/fontawesome-svg-core/styles.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
 config.autoAddCss = false;
 
-// components
-
+// language
+import { LanguageProvider } from '@/utils/language/buttonLanguage';
+import { useEffect } from "react";
+// import i18n from '@/utils/language/i18n';
 
 
 // configuration stuffs
@@ -31,20 +33,26 @@ export const metadata: Metadata = {
   description: "Automize creating active directory's users",
 };
 
-
-
-
-export default function RootLayout({
+export default async function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
+  // Получаем сохранённый язык с сервера или клиента
+  const savedLang = typeof window === 'undefined' 
+    ? 'ru' // Серверная часть (по умолчанию русский)
+    : localStorage.getItem('language') || 'en'; // Клиентская часть
+  
+
   return (
-    <html suppressHydrationWarning>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`} >
-        <ThemeProvider disableTransitionOnChange>
-          {children}
-        </ThemeProvider>
+    <html lang={savedLang} suppressHydrationWarning>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+          <LanguageProvider>
+            <ThemeProvider disableTransitionOnChange>
+              {children}
+            </ThemeProvider>
+          </LanguageProvider>
       </body>
     </html>
   );

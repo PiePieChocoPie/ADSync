@@ -14,6 +14,7 @@ import Input from "@/components/atom/Input/page";
 import Hr from "@/components/atom/Hr/page";
 import Button from '@/components/atom/Button/page';
 import Loading from '@/components/molecule/Loading/page';
+import { useTranslation } from 'react-i18next'; // Импортируем useTranslation
 
 
 
@@ -62,22 +63,23 @@ export default function Auth() {
     }, 0)
   }, [error]);
 
+  const { t } = useTranslation(); // Используем useTranslation для получения переводов
 
   return (
     <div className={styles.container}>
-        <h1>Вход</h1>
+        <h1>{t('Login.login')}</h1>
         <Hr width="100%" classes="mt-2 mb-6" />
         
-        <Input title="Логин" placeholder="Введите логин"
+        <Input title={t('Login.username')} placeholder={t('Login.usernamePlaceholder')}
           classes={`${error===401 && styles.inputError}`}
           action={(e) => setUsername(e.target.value)}
         />
-        <Input title="Пароль" type="password" placeholder="Введите пароль"  
+        <Input title={t('Login.password')} type="password" placeholder={t('Login.passwordPlaceholder')}  
           classes={`${error===401 && styles.inputError}`}
           action={(e) => setPassword(e.target.value)}
         />
         <h6 className="w-min ms-auto">
-            <Button type="submit" action={handleLogin}>Войти</Button>
+            <Button type="submit" action={handleLogin}>{t('Login.enterLogin')}</Button>
         </h6>
 
 

@@ -11,6 +11,8 @@ import logoMiniImg from "@/public/imgs/logo_mini.jpg";
 import logoImg from "@/public/imgs/logo.jpg";
 
 import SidebarItem from "@/components/atom/SidebarItem/page";
+import { useTranslation } from 'react-i18next'; // Импортируем useTranslation
+
 
 function Sidebar () {
   const router = useRouter();
@@ -81,6 +83,7 @@ function Sidebar () {
       setTheme('dark');
     }
   }
+  const { t } = useTranslation(); // Используем useTranslation для получения переводов
 
   return(
     <div className="">
@@ -90,23 +93,23 @@ function Sidebar () {
       >
         <div className={`w-100 mb-3 ${styles.imgContainer} ${folded ? styles.folded : ''}`}>
           <Image className={styles.logo} src={folded? logoMiniImg: logoImg} alt="logo" />
-        </div>
+          </div>
         
         <button onClick={(e) => changeFolded()} className={styles.unfoldButton}>
           	{folded? ">": "<"}
         </button>
       
         <ul className={styles.list}>
-          <SidebarItem name="Главная" icon={faHome} href='dashboard' classes={currentPage=='dashboard' ? 'active': ''} />
-          <SidebarItem name="Очередь сотрудников" icon={faUsers} href='dashboard/queue' classes={currentPage=='queue' ? 'active': ''} />
-          <SidebarItem name="Политика доступов" icon={faUserLock} href='dashboard/policy' classes={currentPage=='policy' ? 'active': ''} />
-          <SidebarItem name="Настройка сервисов" icon={faGears} href='dashboard/settings' classes={currentPage=='settings' ? 'active': ''} />
+          <SidebarItem name={t('Sidebar.home')} icon={faHome} href='dashboard' classes={currentPage=='dashboard' ? 'active': ''} />
+          <SidebarItem name={t('Sidebar.employee')} icon={faUsers} href='dashboard/queue' classes={currentPage=='queue' ? 'active': ''} />
+          <SidebarItem name={t('Sidebar.access')} icon={faUserLock} href='dashboard/policy' classes={currentPage=='policy' ? 'active': ''} />
+          <SidebarItem name={t('Sidebar.customizing')} icon={faGears} href='dashboard/settings' classes={currentPage=='settings' ? 'active': ''} />
           <SidebarItem name="Страница для тестирования" icon={faSpaghettiMonsterFlying} href='dashboard/testing' classes={currentPage=='testing' ? 'active': ''} />
         </ul>
         <div className={styles.empty_stretch + " "}></div>
         <div className={styles.logoutContainer + " mt-2"}>
-          <SidebarItem name="Смена темы" icon={theme == 'light'? faSun: faMoon} action={changeTheme} />
-          <SidebarItem name="Выход" icon={faSignOut} href="" action={logout} />
+          <SidebarItem name={t('Sidebar.theme')} icon={theme == 'light'? faSun: faMoon} action={changeTheme} />
+          <SidebarItem name={t('Sidebar.signout')} icon={faSignOut} href="" action={logout} />
         </div>
     </div>
     
