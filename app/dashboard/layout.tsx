@@ -1,5 +1,7 @@
 // components
 import Sidebar from "@/components/element/Sidebar/page";
+import style from "./style.module.css";
+
 
 // base imports
 export default function DashboardLayout({
@@ -10,7 +12,7 @@ export default function DashboardLayout({
   return (
     <div>
         <Sidebar />
-        <div className="ps-5 w-full max-w-md lg:max-w-2xl xl:max-w-3xl mx-auto">
+        <div className={style.mainContainer}>
           {children}
         </div>
     </div>

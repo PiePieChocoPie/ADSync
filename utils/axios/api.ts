@@ -15,7 +15,7 @@ import { getClientAuthCredentials, getServerAuthCredentials } from './authCreden
 // create axios instance
 const apiAD = axios.create({
   // baseURL: process.env.NEXT_PUBLIC_API_URL,
-  baseURL: "http://server.adsync.com:12040"
+  baseURL: process.env.API_URL_AD
 })
 
 

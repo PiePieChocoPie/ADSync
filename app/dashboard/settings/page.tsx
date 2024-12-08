@@ -10,14 +10,16 @@ import Button from "@/components/atom/Button/page";
 import { useTranslation } from 'react-i18next'; // Импортируем useTranslation
 
 type AppConfigResponse = {
-  ldapServer: string;
-  ldapDomain: string;
-  searchBase: string;
+  ldapServer?: string;
+  ldapPort?: string;
+  ldapDomain?: string;
+  searchBase?: string;
 }
 
 export default function Settings() {
   const [data, setData ] = useState<AppConfigResponse | null>(null);
   const [ldapServer, setLdapServer] = useState('');
+  const [ldapPort, setLdapPort] = useState('');
   const [ldapDomain, setLdapDomain] = useState('');
   const [searchBase, setSearchBase] = useState('');
 
@@ -33,7 +35,21 @@ export default function Settings() {
 
   const saveAppConfig = () => {
     console.log('saving app config');
-    console.log(ldapServer, ldapDomain, searchBase);
+    console.log(ldapServer, ldapPort, ldapDomain, searchBase);
+    let data:AppConfigResponse = {};
+    if (ldapServer) data['ldapServer'] = ldapServer;
+    if (ldapPort) data['ldapPort'] = ldapPort;
+    if (ldapDomain) data['ldapDomain'] = ldapDomain;
+    if (searchBase) data['searchBase'] = searchBase;
+    apiAD.patch('/UpdateAppConfig', data, {
+      headers: {
+        'Content-Type': 'multipart/form-data',
+      },
+    }).then(response => {
+      console.log(response);
+    }).catch(error => {
+      console.error('Error fetching data:', error);
+    })
   }
 
   useEffect(() => { 
@@ -50,7 +66,7 @@ export default function Settings() {
           <Input defaultValue={`${data ? data?.ldapServer: ''}`} title={t('Customizing.ip')} placeholder={t('Customizing.enterIP')} action={(e) => setLdapServer(e.target.value)}/>
         </div>
         <div className={styles.gridItem}>
-          <Input defaultValue="Сделай уже, а?!" title={t('Customizing.port')} placeholder={t('Customizing.enterPort')} />
+          <Input defaultValue={`${data ? data?.ldapPort: ''}`} title={t('Customizing.port')} placeholder={t('Customizing.enterPort')} action ={(e) => setLdapPort(e.target.value)}/>
         </div>
         <div className={styles.gridItem}>
           <Input defaultValue={`${data ? data?.searchBase: ''}`} title={t('Customizing.dc')} placeholder={t('Customizing.enterDC')} action={(e) => setSearchBase(e.target.value)}/>

@@ -1,7 +1,6 @@
 'use client'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUserLock } from '@fortawesome/free-solid-svg-icons';
-import { faEarth } from '@fortawesome/free-solid-svg-icons/faEarth';
+import { faFileCircleMinus, faUserLock, faEarth } from '@fortawesome/free-solid-svg-icons';
 import { useRouter } from 'next/navigation'
 import { useState, useEffect } from 'react';
 
@@ -31,7 +30,8 @@ export default function Auth() {
     const credentials: string = `${username}:${password}`;
     const encodedCredentials = toBase64(credentials);
 
-      await axios.get('http://server.adsync.com:12041/Authentication/', {
+      // await axios.get('http://server.adsync.com:12041/Authentication/', {
+      await axios.get(`${process.env.API_URL_AD}/Authentication/`, {
         headers: {
           "Authorization": `Basic ${encodedCredentials}`,
           },
@@ -44,6 +44,7 @@ export default function Auth() {
       }).catch(error => {
         console.log(error)
         if (error.request.status === 401) setError(401);
+        else if (error.request.status === 404) setError(404);
         else if (error.request.status === 500) setError(500);
         else if (error.request.status === 0) setError(0);
         console.error('Error fetching data:', error);
@@ -64,7 +65,6 @@ export default function Auth() {
   }, [error]);
 
   const { t } = useTranslation(); // Используем useTranslation для получения переводов
-
   return (
     <div className={styles.container}>
         <h1>{t('Login.login')}</h1>
@@ -88,13 +88,17 @@ export default function Auth() {
             {(error === 0 || error === 500) && 
               <FontAwesomeIcon icon={faEarth} />
             }
+            {error === 404 &&
+              <FontAwesomeIcon icon={faFileCircleMinus} />
+            }
             {error === 401 && 
               <FontAwesomeIcon icon={faUserLock} />
             }
             <span className={`${styles.errorMsg} ms-2`}>
-              {error === 0 && "Внутренняя ошибка сервера. Сервер не отвечает"}
+              {error === 0 && "Внутренняя ошибка сервера. Сервер не отвечает."}
               {error === 401 && "Неправильно указан логин или пароль."}
-              {error === 500 && "Внутренняя ошибка сервера. Проблема с запросом на сервер"}
+              {error === 404 && "Страница не найдена. Возможно, данного endpoint не существует."}
+              {error === 500 && "Внутренняя ошибка сервера. Проблема с запросом на сервер."}
             </span>
           </span>
         }
