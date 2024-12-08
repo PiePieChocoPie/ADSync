@@ -4,7 +4,7 @@
 
 :root {
   /* text colors */
-  --background: #fff;
+  --background: #edeef0;
   --element-background: #f9f9f9;
   --text-regular: #060e19;
   --text-reversed: #fff;
@@ -32,7 +32,7 @@
   --text-hover: #fff;
   
   /* button, inputs, list's items etc. */
-  --item-bg: #fff;
+  --item-bg: var(--element-background);
   --item-bg-hover: #f9f9f9;
   --item-bg-colored-hover: var(--primary-light-3);
   --item-border: #ededed;
@@ -50,6 +50,8 @@
 
   --spinner-color: var(--primary);
 
+  --button-background: var(--background);
+
   --filled-button-bg: var(--primary-dark-3);
   --filled-button-text: var(--text-reversed);
   --filled-button-bg-hover: var(--primary);
@@ -62,33 +64,38 @@
 }
 
 :root[data-theme="dark"] {
-/* text colors */
---background: #272727;
---element-background: #f9f9f9;
---text-regular: #fff;
---text-reversed: #060e19;
+  /* text colors */
+  --background: #1d1d1d;
+  --element-background: #272727;
+  /* --background: #edeef0;
+  --element-background: #f9f9f9; */
+  --text-regular: #fff;
+  --text-reversed: #060e19;
 
-/* main hover */
---primary-hover: var(--primary-dark-1);
---text-hover: #fff;
+  /* main hover */
+  --primary-hover: var(--primary-dark-1);
+  --text-hover: #fff;
 
-/* button, inputs, list's items etc. */
---item-bg: #272727;
---item-bg-hover: #404040;
---item-bg-colored-hover: var(--primary-dark-1);
---item-border: #1c1c1c;
---item-border-bottom: #303030;
---item-border-active: var(--primary-hover);
---item-border-active-hover: var(--primary);
---item-autofill: #999999;;
-/* --item-autofill: #60cdff; */
---item-border-autofill: var(--item-autofill);
+  /* button, inputs, list's items etc. */
+  --item-bg: var(--element-background);
+  --item-bg-hover: #404040;
+  --item-bg-colored-hover: var(--primary-dark-1);
+  --item-border: #202020;
+  --item-border-bottom: #303030;
+  --item-border-hover: #005fb8;
+  --item-border-active: var(--primary-hover);
+  --item-border-active-hover: var(--primary);
+  --item-autofill: #999999;;
+  /* --item-autofill: #60cdff; */
+  --item-border-autofill: var(--item-autofill);
 
---spinner-color: var(--primary);
+  --spinner-color: var(--primary);
 
---filled-button-bg: var(--primary-dark-1);
---filled-button-text: var(--text-regular);
---filled-button-bg-hover: var(--primary);
+  --button-background: var(--background);
+
+  --filled-button-bg: var(--primary-dark-1);
+  --filled-button-text: var(--text-regular);
+  --filled-button-bg-hover: var(--primary);
 
 }
 

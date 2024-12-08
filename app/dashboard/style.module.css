@@ -1,4 +1,5 @@
 .mainContainer {
-  
-  @apply ps-5 w-full max-w-md lg:max-w-2xl xl:max-w-3xl mx-auto;
+  background-color: var(--element-background);
+  border-radius: var(--item-rounded-lg);
+  @apply mt-8 px-5 py-5 w-full max-w-md lg:max-w-2xl xl:max-w-3xl mx-auto;
 }

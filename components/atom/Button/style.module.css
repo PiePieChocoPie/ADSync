@@ -1,18 +1,22 @@
 .item {
-    padding: 0.5rem 3rem;
-    width: 100%;
-    background-color: var(--background);
-    color: var(--foreground);
-    border: var(--item-border-width) solid var(--item-border);
-    border-bottom-color: var(--item-border-bottom);
-    border-radius: var(--item-rounded);
-    cursor: pointer;
-    @apply transition-colors duration-300;
+  padding: 0.5rem 3rem;
+  width: 100%;
+  background-color: var(--button-background);
+  color: var(--foreground);
+  border: var(--item-border-width) solid var(--button-background);
+  border-bottom-color: var(--item-border-bottom);
+  border-radius: var(--item-rounded);
+  cursor: pointer;
+  @apply transition-colors duration-300;
 }
 
 .item:hover {
-    border-color: var(--primary-hover);
-    border-bottom-color: var(--primary-dark-1);
-    background-color: var(--primary-hover);
-    color: var(--text-hover);
+  border-color: var(--primary-hover);
+  border-bottom-color: var(--primary-dark-1);
+  background-color: var(--primary-hover);
+  color: var(--text-hover);
+}
+
+.item:focus-visible, .item:focus {
+  outline: 2px solid var(--item-border-hover) !important;
 }

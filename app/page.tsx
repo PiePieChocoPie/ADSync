@@ -1,5 +1,3 @@
-import Input from "@/components/atom/Input/page";
-import Link from "next/link";
 import Auth from "@/components/element/Auth/page";
 
 

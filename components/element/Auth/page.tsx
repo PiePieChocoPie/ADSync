@@ -66,7 +66,7 @@ export default function Auth() {
 
   const { t } = useTranslation(); // Используем useTranslation для получения переводов
   return (
-    <div className={styles.container}>
+    <form className={styles.container} action={handleLogin} onSubmit={(e) => e.preventDefault()}>
         <h1>{t('Login.login')}</h1>
         <Hr width="100%" classes="mt-2 mb-6" />
         
@@ -104,6 +104,6 @@ export default function Auth() {
         }
 
         {loading && <Loading />}
-    </div>
+    </form>
   );
 }
