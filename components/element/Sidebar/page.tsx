@@ -6,9 +6,7 @@ import { useTheme } from 'next-themes';
 
 import styles from "./style.module.css";
 import { faSignOut, faUsers, faGears, faUserLock, faHome, faSpaghettiMonsterFlying, faSun, faMoon} from '@fortawesome/free-solid-svg-icons'
-import Image from "next/image";
-import logoMiniImg from "@/public/imgs/logo_mini.jpg";
-import logoImg from "@/public/imgs/logo.jpg";
+import logoImg from "@/public/imgs/logo.png";
 
 import SidebarItem from "@/components/atom/SidebarItem/page";
 import { useTranslation } from 'react-i18next'; // Импортируем useTranslation
@@ -91,24 +89,25 @@ function Sidebar () {
       <div 
         className={`${styles.container} ${folded ? styles.folded : ''} ${styles.sidebarWidth} ${styles.sidebar} fixed left-0 top-0 flex flex-col`}
       >
-        <div className={`w-100 mb-3 ${styles.imgContainer} ${folded ? styles.folded : ''}`}>
+        {/* <div className={`w-100 mb-3 ${styles.imgContainer} ${folded ? styles.folded : ''}`}>
           <Image className={styles.logo} src={folded? logoMiniImg: logoImg} alt="logo" />
-          </div>
+        </div> */}
+        <SidebarItem name={t('Sidebar.theme')} icon={theme == 'light'? faSun: faMoon} action={changeTheme} />
+        <div className={styles.empty_stretch + " my-2"}></div>
         
         <button onClick={(e) => changeFolded()} className={styles.unfoldButton}>
           	{folded? ">": "<"}
         </button>
       
         <ul className={styles.list}>
-          <SidebarItem name={t('Sidebar.home')} icon={faHome} href='dashboard' classes={currentPage=='dashboard' ? 'active': ''} />
+          <SidebarItem name={t('Sidebar.home')} img={logoImg} href='dashboard' classes={currentPage=='dashboard' ? 'active': ''} />
           <SidebarItem name={t('Sidebar.employee')} icon={faUsers} href='dashboard/queue' classes={currentPage=='queue' ? 'active': ''} />
           <SidebarItem name={t('Sidebar.access')} icon={faUserLock} href='dashboard/policy' classes={currentPage=='policy' ? 'active': ''} />
           <SidebarItem name={t('Sidebar.customizing')} icon={faGears} href='dashboard/settings' classes={currentPage=='settings' ? 'active': ''} />
           <SidebarItem name="Страница для тестирования" icon={faSpaghettiMonsterFlying} href='dashboard/testing' classes={currentPage=='testing' ? 'active': ''} />
         </ul>
-        <div className={styles.empty_stretch + " "}></div>
-        <div className={styles.logoutContainer + " mt-2"}>
-          <SidebarItem name={t('Sidebar.theme')} icon={theme == 'light'? faSun: faMoon} action={changeTheme} />
+        <div className={styles.empty_stretch + " mb-2"}></div>
+        <div className={styles.logoutContainer + ""}>
           <SidebarItem name={t('Sidebar.signout')} icon={faSignOut} href="" action={logout} />
         </div>
     </div>

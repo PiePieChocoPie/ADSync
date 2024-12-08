@@ -6,15 +6,17 @@
   position: relative;
   overflow: hidden;
   padding-left: 1rem;
-  padding-right: 1rem;
-  @apply py-4 text-lg transition-colors duration-500;
+  height: 60px;
+  @apply text-lg transition-colors duration-500;
+  @apply flex items-center;
 }
 .item:hover {
   background-color: var(--item-bg-colored-hover);
 }
 .item > span {
+  margin-left: 34px;
   white-space: nowrap;
-  @apply ms-3 transition-opacity duration-200 ease-out;
+  @apply transition-opacity duration-200 ease-out;
 }
 
 
@@ -28,6 +30,16 @@
   border-left-color: var(--item-border-active-hover);
 }
 
+.item > .img {
+  display: inline-block;
+  vertical-align: middle;
+}
+.img {
+  width: 26px;
+}
+:root[data-theme="dark"] .img {
+  filter: invert(1);
+}
 /* 
   (1 rem)
   padding-left: 1rem;
