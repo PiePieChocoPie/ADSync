@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import Button from '@/components/atom/Button/page';
 import styles from './style.module.css';
+import * as stylesSection from '../style.module.css';
 import { useTranslation } from 'react-i18next';
 
 const ServicesSection: React.FC = () => {
@@ -22,7 +23,7 @@ const ServicesSection: React.FC = () => {
 
   return (
     <div className={`${styles.container}`}>
-      <h2 className={`${styles.title}`}>{t('OurServices.title')}</h2>
+      <h2 className={`${stylesSection.title}`}>{t('OurServices.title')}</h2>
       <div className={`${styles.content}`}>
         <div className={`${styles.buttonGroup}`}>
           <Button

@@ -1,25 +1,41 @@
-/* AboutSection.module.css */
 .container {
-  background: rgba(40, 44, 52, 0.8); /* Полупрозрачный фон */
+  background: var(--element-background); /* Используем переменную для фона */
   backdrop-filter: blur(8px); /* Эффект размытия */
-  padding: 40px 20px; /* Отступы */
-  margin: 20px auto; /* Отступы между секциями */
-  border-radius: 10px; /* Скругленные углы */
+  padding: 40px 20px;
+  margin: 20px auto;
+  border-radius: var(--item-rounded-lg); /* Скругленные углы */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Мягкая тень */
-  max-width: 1100px; /* Ограничение ширины */
+  max-width: 1100px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 450px;
+}
+
+.imgContainer {
+  position: relative; /* Основа для позиционирования изображения */
+}
+
+.img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: auto;
+  height: 80%;
+  object-fit: contain;
+  border-top-right-radius: var(--item-rounded-lg); /* Скругленные углы */
 }
 
 .title {
-  font-size: 24px; /* Размер шрифта */
-  font-weight: bold; /* Жирный текст */
-  color: #ffffff; /* Цвет текста */
-  text-align: center; /* Центрирование */
-  margin-bottom: 20px; /* Отступ снизу */
+  font-size: 36px;
+  font-weight: bold;
+  color: var(--text-regular); /* Цвет текста */
+  text-align: left;
+  margin-bottom: 20px;
 }
 
 .content {
-  color: rgba(255, 255, 255, 0.9); /* Полупрозрачный текст */
-  font-size: 16px; /* Размер шрифта */
-  line-height: 1.6; /* Высота строки */
-  margin-bottom: 20px; /* Отступ снизу */
+  text-align: left;
+  margin-bottom: 20px;
+  max-width: 550px; /* Ограничиваем ширину */
 }

@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import Button from '@/components/atom/Button/page';
 import Input from "@/components/atom/Input/page";
 import styles from './style.module.css';
+import * as stylesSection from '../style.module.css';
 import { useTranslation } from 'react-i18next'; // Импортируем useTranslation
 
 
@@ -21,16 +22,16 @@ const LoginSection: React.FC = () => {
   };
 
   return (
-    <div className={styles.container}>
-      <h2 className={styles.title}>{t('Contact.title')}</h2>
+    <div className={`${styles.container}`}>
+      <h2 className={`${stylesSection.title}`}>{t('Contact.title')}</h2>
       <div className={`${styles.formGroup}`}>
-        <Input type="text" value={name} onChange={e => setName(e.target.value)} placeholder={t('Contact.name')} classes={`${styles.input}`}/>
+        <Input type="text" defaultValue={name} action={e => setName(e.target.value)} placeholder={t('Contact.name')} classes={`${styles.input}`}/>
       </div>
       <div className={`${styles.formGroup}`}>
-        <Input type="email" value={email} onChange={e => setEmail(e.target.value)} placeholder={t('Contact.email')} classes={`${styles.input}`}/>
+        <Input type="email" defaultValue={email} action={e => setEmail(e.target.value)} placeholder={t('Contact.email')} classes={`${styles.input}`}/>
       </div>
       <div className={`${styles.formGroup}`}>
-        <Input type="tel" value={phone} onChange={e => setPhone(e.target.value)} placeholder={t('Contact.phone')} classes={`${styles.input}`}/>
+        <Input type="tel" defaultValue={phone} action={e => setPhone(e.target.value)} placeholder={t('Contact.phone')} classes={`${styles.input}`}/>
       </div>
       <Button action={handleReset} classes={`${styles.button}`}>{t('Contact.send')}</Button>
     </div>

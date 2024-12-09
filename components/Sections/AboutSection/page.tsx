@@ -1,19 +1,21 @@
 'use client';
-// AboutSection.tsx
 import React from 'react';
 import styles from './style.module.css';
-import { useTranslation } from 'react-i18next'; // Импортируем useTranslation
-
+import * as stylesSection from '../style.module.css';
+import { useTranslation } from 'react-i18next';
+import Image from 'next/image';
+import aboutImg from '@/public/imgs/about.png';
 
 const AboutSection: React.FC = () => {
-  const { t } = useTranslation(); // Используем useTranslation для получения переводов
+  const { t } = useTranslation();
 
   return (
-    <div className={styles.container}>
-      <h2 className={styles.title}>{t('About.title')}</h2>
-      <p className={styles.content}>
-        {t('About.content')}
-      </p>
+    <div className={`${styles.container}`}>
+      <Image src={aboutImg} alt="Logo" className={`${styles.img}`} />
+      <div className={styles.imgContainer}>
+        <h2 className={`${stylesSection.title}`}>{t('About.title')}</h2>
+        <div className={`${styles.content} ${stylesSection.text}`} dangerouslySetInnerHTML={{ __html: t('About.content') }}></div>
+      </div>
     </div>
   );
 };

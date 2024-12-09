@@ -1,49 +1,49 @@
-/* ReviewsSection.module.css */
 .container {
-  background: rgba(40, 44, 52, 0.8); /* Полупрозрачный фон */
-  backdrop-filter: blur(8px); /* Эффект размытия */
-  padding: 40px 20px; /* Отступы */
-  margin: 20px auto; /* Отступы между секциями */
-  border-radius: 10px; /* Скругленные углы */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Мягкая тень */
-  max-width: 1100px; /* Ограничение ширины */
+  padding: 40px 20px;
+  margin: 20px auto;
+  max-width: 1100px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: auto;
 }
 
 .title {
-  font-size: 24px; /* Размер шрифта */
-  font-weight: bold; /* Жирный текст */
-  color: #ffffff; /* Цвет текста */
-  text-align: center; /* Центрирование */
-  margin-bottom: 20px; /* Отступ снизу */
+  font-size: 36px;
+  font-weight: bold;
+  color: var(--text-reversed); /* Цвет текста */
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 .content {
-  color: rgba(255, 255, 255, 0.9); /* Полупрозрачный текст */
-  font-size: 16px; /* Размер шрифта */
-  line-height: 1.6; /* Высота строки */
-  margin-bottom: 20px; /* Отступ снизу */
-}
-  
-.reviewItem {
-  background: #ffffff; /* Чисто-белый фон */
-  border-radius: 8px; /* Скругленные углы */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06); /* Мягкие тени */
-  padding: 16px; /* Внутренние отступы */
-  margin: 10px 0; /* Отступ между элементами */
-  font-size: 16px; /* Размер шрифта */
+  color: var(--text-muted); /* Полупрозрачный текст */
+  font-size: 16px;
   line-height: 1.6;
-  color: #323130; /* Тёмно-серый текст */
+  margin-bottom: 20px;
+  border: 1px solid var(--primary-light-1); /* Цвет границы */
+}
+
+.reviewItem {
+  background: var(--element-light); /* Фон для отзывов */
+  border-radius: var(--item-rounded); /* Скругленные углы */
+  box-shadow: var(--shadow-secondary); /* Мягкие тени */
+  padding: 16px;
+  margin: 10px 0;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-regular); /* Тёмно-серый текст */
   transition: box-shadow 0.2s ease, transform 0.2s ease; /* Плавные анимации */
 }
 
 /* Анимация при наведении */
 .reviewItem:hover {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2), 0 2px 6px rgba(0, 0, 0, 0.1);
-  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover); /* Усиленные тени */
+  transform: translateY(-2px); /* Лёгкий подъём */
 }
 
 /* Анимация для фокуса (опционально, улучшает UX) */
 .reviewItem:focus-within {
-  outline: 2px solid #2563eb;
-  border-radius: 8px;
+  outline: 2px solid var(--primary); /* Цвет фокуса */
+  border-radius: var(--item-rounded); /* Скругление углов при фокусе */
 }

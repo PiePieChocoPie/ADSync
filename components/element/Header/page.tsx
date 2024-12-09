@@ -11,7 +11,7 @@ import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
 
 
 interface HeaderProps {
-  scrollToSection: (section: 'about' | 'services' | 'reviews' | 'feedback') => void;
+  scrollToSection: (section: 'about' | 'advantages' | 'services' | 'reviews' | 'feedback') => void;
 }
 
 const Header: React.FC<HeaderProps> = ({ scrollToSection }) => {
@@ -38,8 +38,9 @@ const Header: React.FC<HeaderProps> = ({ scrollToSection }) => {
   };
 
 
-  const navItems: { label: string; section: 'about' | 'services' | 'reviews' | 'feedback' }[] = [
+  const navItems: { label: string; section: 'about' | 'advantages' | 'services' | 'reviews' | 'feedback' }[] = [
     { label: t('Header.about'), section: 'about' },
+    // { label: t('Header.about'), section: 'advantages' },
     { label: t('Header.services'), section: 'services' },
     { label: t('Header.reviews'), section: 'reviews' },
     { label: t('Header.feedback'), section: 'feedback' },

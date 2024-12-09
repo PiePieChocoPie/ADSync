@@ -1,0 +1,79 @@
+.container {
+  padding: 40px 20px;
+  margin: 20px auto;
+  max-width: 1100px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+}
+
+.title {
+  font-size: 36px;
+  font-weight: bold;
+  color: var(--text-regular); /* Цвет текста */
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.content {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 18px;
+  
+}
+.maxWidth{
+  max-width: 540px; /* Ограничиваем ширину */
+}
+
+.imgContainer {
+  position: relative; /* Основа для позиционирования изображения */
+  height: 350px;
+}
+
+.img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: auto;
+  height: 100%;
+  object-fit: contain;
+  border-top-right-radius: var(--item-rounded-lg); /* Скругленные углы */
+}
+
+.buttonGroup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: 20px auto;
+  background: var (--element-background);
+  border-radius: 50px; /* Полукруглый контейнер */
+  padding: 10px 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Мягкая тень */
+}
+
+.buttonGroup button {
+  background: transparent; /* Прозрачный фон для неактивных кнопок */
+  border: none;
+  padding: 10px 20px; /* Отступы для кнопки */
+  border-radius: 50px; /* Полностью круглая кнопка */
+  font-size: 18px;
+  color: var(--text-regular);
+  cursor: pointer;
+  transition: all 0.3s ease; /* Плавный переход */
+  text-align: center;
+  white-space: nowrap; /* Запрет переноса текста */
+}
+
+.buttonGroup button:hover {
+  background : var(--primary-light-1) !important; /* Лёгкий фон при наведении */
+  color: #ffffff; /* Белый текст при наведении */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Лёгкая тень при наведении */
+}
+
+.activeButton {
+  background-color: var(--item-border-hover) !important; /* Синий фон для активной кнопки */
+  color: #ffffff !important; /* Белый текст для активной кнопки */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) !important; /* Тень активной кнопки */
+}

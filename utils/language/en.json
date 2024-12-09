@@ -9,7 +9,23 @@
     },
     "About": {
         "title": "About Us",
-        "content": "Here you can add information about your company or project."
+        "content": "<strong>ADSync</strong> - is an intelligent system that automates the creation of user accounts, manages accesses, integrates information from different platforms, and offers centralized monitoring. We provide companies with the opportunity to focus on strategic tasks while taking on all the complexities of data management. <br><br>We believe that <strong> data management should be transparent, secure, and efficient.</strong> Our goal - is to eliminate the chaos that arises when working with multiple enterprise systems and provide a tool that accelerates processes, enhances security, and reduces costs."
+    },
+    "Advantages": {
+    "title": "Our Advantages",
+    "content": "<strong>ADSync</strong> is designed with modern data protection, high performance, and user convenience requirements in mind. Our product combines reliable security mechanisms, innovative technologies, and an intuitive interface to offer you maximum value.",
+    "armor": {
+        "title": "Protection",
+        "content": "<ul><li><strong>Reliable authentication:</strong> Automatic generation of complex passwords, security policy configuration, and mandatory password changes upon first login.</li><br><li><strong>Access control:</strong> Centralized management of user groups, prevention of unauthorized access, and flexible permission configuration.</li><br><li><strong>Audit and monitoring:</strong> The event log records all account-related actions for quick threat detection and transparency.</li><br><li><strong>Integration with access systems:</strong> Automatic issuance of access passes based on company security policies.</li></ul>"
+    },
+    "effective": {
+        "title": "Performance",
+        "content": "<ul><li><strong>Automation:</strong> Eliminating manual data entry when creating accounts and setting access reduces time spent on routine operations by up to 40%.</li><br><li><strong>Integration with corporate systems:</strong> Fast synchronization with 1C, Bitrix24, Microsoft Exchange, and other platforms.</li><br><li><strong>Scalability:</strong> ADSync easily adapts to the needs of a growing business, adding new features without reducing performance.</li><br><li><strong>Process acceleration:</strong> Implementing ADSync increases employee efficiency by up to 10% and reduces IT department costs.</li></ul>"
+    },
+    "usage": {
+        "title": "Ease of Use",
+        "content": "<ul><li><strong>Intuitive interface:</strong> The web-based control panel allows quick system setup, even without in-depth technical knowledge.</li><br><li><strong>Flexible settings:</strong> The ability to configure password parameters, access policies, and integrations via a user-friendly interface.</li><br><li><strong>Process transparency:</strong> All data and actions are displayed in a single control center, ensuring ease of monitoring and control.</li><br><li><strong>User support:</strong> Step-by-step guides, notifications, and friendly technical support help quickly resolve any issues.</li></ul>"
+    }
     },
     "OurServices": {
         "title": "Our Services",

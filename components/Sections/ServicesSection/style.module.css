@@ -1,26 +1,26 @@
 /* Основной контейнер */
 .container {
-  background: rgba(40, 44, 52, 0.8); /* Полупрозрачный фон */
-  backdrop-filter: blur(8px); /* Эффект размытия */
   padding: 40px 20px;
   margin: 20px auto;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   max-width: 1100px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: auto;
 }
 
 /* Заголовок секции */
 .title {
-  font-size: 24px;
+  font-size: 36px;
   font-weight: bold;
-  color: #ffffff;
+  color: var(--text-reversed); /* Цвет текста */
   text-align: center;
   margin-bottom: 20px;
 }
 
 /* Контент */
 .content {
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--text-muted); /* Полупрозрачный текст */
   font-size: 16px;
   line-height: 1.6;
   margin-bottom: 20px;
@@ -35,23 +35,23 @@
 }
 
 .buttonGroup .button {
-  background: #61dafb;
-  color: #282c34;
+  background: var(--primary); /* Основной цвет */
+  color: var(--text-regular); /* Тёмный текст */
   font-size: 16px;
   padding: 10px 20px;
   border: none;
-  border-radius: 6px;
+  border-radius: var(--item-rounded); /* Скругленные углы */
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .buttonGroup .button:hover {
-  background: #52c7e9;
+  background: var(--primary-hover); /* Цвет при наведении */
   transform: translateY(-2px);
 }
 
 .buttonGroup .button:active {
-  background: #41a6d1;
+  background: var(--primary-active); /* Цвет при нажатии */
   transform: translateY(0);
 }
 
@@ -59,21 +59,19 @@
 .textDisplay {
   text-align: center;
   font-size: 18px;
-  color: #282c34;
-  background: #ffffff;
-  border-radius: 8px;
+  color: var(--text-regular); /* Текстовый цвет */
+  background: var(--element-light); /* Фон текста */
+  border-radius: var(--item-rounded); /* Скругленные углы */
   padding: 20px;
   margin: 20px 0;
 
   /* Начальные свойства */
-  
   transform: translateY(10px);
   transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out, visibility 0.4s ease-in-out;
 }
 
-  .textDisplay.active {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-  }
-
+.textDisplay.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
