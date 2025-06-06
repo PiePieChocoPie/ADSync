@@ -1,0 +1,10 @@
+.table {
+    border: 2px solid var(--item-border);
+}
+.tr, .th {
+    border: 2px solid var(--item-border);
+}
+.th {
+    background-color: var(--element-background);
+    color: var(--text-regular)
+}

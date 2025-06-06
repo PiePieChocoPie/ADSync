@@ -25,12 +25,20 @@ export default function Settings() {
 
   const getAppConfig = () => {
     console.log('new response to getAppConfig');
-    apiAD.get('/GetAppConfig')
-      .then(response => {
-      setData(response.data);
-    }).catch(error => {
-      console.error('Error fetching data:', error);
-    })
+    setTimeout(()=>{    
+      setData({
+        ldapServer: '109.120.184.9',
+        ldapPort: '4222',
+        ldapDomain: 'DC=adsync, DC=com',
+        searchBase: 'adsync',
+    })}, 500)
+
+    // apiAD.get('/GetAppConfig')
+    //   .then(response => {
+    //     setData(response.data);
+    // }).catch(error => {
+    //   console.error('Error fetching data:', error);
+    // })
   }
 
   const saveAppConfig = () => {
