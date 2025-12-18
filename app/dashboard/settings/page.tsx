@@ -23,27 +23,33 @@ export default function Settings() {
   const [ldapDomain, setLdapDomain] = useState('');
   const [searchBase, setSearchBase] = useState('');
 
+  // const fs = require('fs');
+  // const path = require('path');
+  // const filePath = path.join(__dirname, 'data.json');
+
+  // function readConfig() {
+  //   try {
+  //     const rawData = fs.readFileSync(filePath, 'utf-8');
+  //     const config = JSON.parse(rawData);
+  //     return config;
+  //   } catch (err) {
+  //     console.error('Ошибка при чтении файла:', err);
+  //     return null;
+  //   }
+  // }
+
   const getAppConfig = () => {
     console.log('new response to getAppConfig');
-    setTimeout(()=>{    
-      setData({
-        ldapServer: '109.120.184.9',
-        ldapPort: '4222',
-        ldapDomain: 'DC=adsync, DC=com',
-        searchBase: 'adsync',
-    })}, 500)
-
-    // apiAD.get('/GetAppConfig')
-    //   .then(response => {
-    //     setData(response.data);
-    // }).catch(error => {
-    //   console.error('Error fetching data:', error);
-    // })
+    apiAD.get('/GetAppConfig')
+      .then(response => {
+        setData(response.data);
+    }).catch(error => {
+      console.error('Error fetching data:', error);
+    })
   }
 
   const saveAppConfig = () => {
     console.log('saving app config');
-    console.log(ldapServer, ldapPort, ldapDomain, searchBase);
     let data:AppConfigResponse = {};
     if (ldapServer) data['ldapServer'] = ldapServer;
     if (ldapPort) data['ldapPort'] = ldapPort;

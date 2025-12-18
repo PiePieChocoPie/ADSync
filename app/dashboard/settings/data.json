@@ -1,0 +1,6 @@
+{
+    "ldapServer": "109.120.184.9",
+    "ldapPort": "4222",
+    "ldapDomain": "DC=adsync, DC=com",
+    "searchBase": "adsync"
+}

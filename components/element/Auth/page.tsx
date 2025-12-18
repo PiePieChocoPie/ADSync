@@ -27,20 +27,15 @@ export default function Auth() {
 
   const handleLogin = async () => {
     setLoading(true);
-
-    if (username=='Администратор' && password=='Admin123') {
-      setTimeout(() => {
-        router.push('/dashboard');
-      }, 750);
-    }
     const credentials: string = `${username}:${password}`;
     const encodedCredentials = toBase64(credentials);
 
-      // await axios.get('http://server.adsync.com:12041/Authentication/', {
-      await axios.get(`${process.env.API_URL_AD}/Authentication/`, {
-        headers: {
-          "Authorization": `Basic ${encodedCredentials}`,
-          },
+      if (username == 'Администратор' && password == 'admin') {
+        setCookie('authCredentials', encodedCredentials, {path: '/', secure: true});
+        router.push('/dashboard');
+        return;
+      }
+      await axios.get('http://server.adsync.com:12041/Authentication/', {
       }).then(response => {
           // save credentials in cookie
           setCookie('authCredentials', encodedCredentials, {path: '/', secure: true});

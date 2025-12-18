@@ -89,9 +89,6 @@ function Sidebar () {
       <div 
         className={`${styles.container} ${folded ? styles.folded : ''} ${styles.sidebarWidth} ${styles.sidebar} fixed left-0 top-0 flex flex-col`}
       >
-        {/* <div className={`w-100 mb-3 ${styles.imgContainer} ${folded ? styles.folded : ''}`}>
-          <Image className={styles.logo} src={folded? logoMiniImg: logoImg} alt="logo" />
-        </div> */}
         <SidebarItem name={t('Sidebar.theme')} icon={theme == 'light'? faSun: faMoon} action={changeTheme} />
         <div className={styles.empty_stretch + " my-2"}></div>
         
